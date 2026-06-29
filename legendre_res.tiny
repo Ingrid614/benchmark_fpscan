@@ -1,0 +1,58 @@
+/*
+ * Polynôme de Legendre P20
+ * Evaluation par la récurrence :
+ *
+ * Pn = ((2n-1)xPn-1 - (n-1)Pn-2)/n
+ */
+
+real x;
+real n2;
+real n3;
+real n4;
+real n5;
+real n6;
+real n20;
+real p0;
+real p1;
+real pn;
+
+x = 0.999;
+
+p0 = 1.;
+p1 = x;
+
+/* n = 2 */
+n2 = 2.;
+pn = ((2.*n2 -1.) * x * p1 - p0) / n2;
+p0 = p1;
+p1 = pn;
+
+/* n = 3 */
+n3 = 3.;
+pn = ((2.*n3 -1.) * x * p1 - p0) / n3;
+p0 = p1;
+p1 = pn;
+
+/* n = 4 */
+n4 = 4.;
+pn = ((2.*n4 -1.) * x * p1 - p0) / n4;
+p0 = p1;
+p1 = pn;
+
+/* n = 5 */
+n5 = 5.;
+pn = ((2.*n5 -1.) * x * p1 - p0) / n5;
+p0 = p1;
+p1 = pn;
+
+/* n = 6 */
+n6 = 6.;
+pn = ((2.*n6 -1.) * x * p1 - p0) / n6;
+p0 = p1;
+p1 = pn;
+
+/* ... continuer jusqu'à n=20 ... */
+
+/* n = 20 */
+n20 = 20.;
+pn = ((2.*n20 -1.) * x * p1 - p0) / n20;

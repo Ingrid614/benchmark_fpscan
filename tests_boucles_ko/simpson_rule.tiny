@@ -1,0 +1,34 @@
+real lrange;
+real urange;
+real n;
+
+real step;
+real sum;
+
+real i;
+real x;
+
+lrange = 13223113.;
+urange = 14223113.;
+n = 20.;
+
+step = (urange - lrange) / n;
+
+sum = lrange * lrange;
+
+i = 1.;
+
+while (i < n) {
+
+    x = lrange + i * step;
+    sum = sum + 4. * (x * x);
+
+    x = lrange + (i + 1.) * step;
+    sum = sum + 2. * (x * x);
+
+    i = i + 2.;
+}
+
+sum = sum + urange * urange;
+
+sum = sum * (step / 3.);

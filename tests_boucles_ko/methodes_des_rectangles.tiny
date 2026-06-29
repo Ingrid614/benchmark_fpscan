@@ -1,0 +1,37 @@
+
+real a;
+real b;
+real n;
+real longueur;
+real k;
+real aire_inf;
+real aire_sup;
+real x1;
+real x2;
+real s1;
+real s2;
+
+a = 0.;
+b = 6.283185307179586;
+n = 100.;
+
+longueur = (b - a) / n;
+
+aire_inf = 0.;
+aire_sup = 0.;
+
+k = 0.;
+
+while (k < n) {
+
+    x1 = a + k * longueur;
+    x2 = a + (k + 1.) * longueur;
+
+    s1 = x1 - (x1 * x1 * x1) / 6. + (x1 * x1 * x1 * x1 * x1) / 120.;
+    s2 = x2 - (x2 * x2 * x2) / 6. + (x2 * x2 * x2 * x2 * x2) / 120.;
+
+    aire_inf = aire_inf + longueur * s1;
+    aire_sup = aire_sup + longueur * s2;
+
+    k = k + 1.;
+}

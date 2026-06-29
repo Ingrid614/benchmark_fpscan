@@ -1,0 +1,42 @@
+// Algorithme permettant de calculer la norme de vecteurs à trois dimensions
+real x1;
+real y1;
+real z1;
+real nrkj2_1;
+real nrkj_1;
+
+real x2;
+real y2;
+real z2;
+real nrkj2_2;
+real nrkj_2;
+
+real x3;
+real y3;
+real z3;
+real nrkj2_3;
+real nrkj_3;
+
+/* Cas 1 */
+x1 = 268453443323035648.;
+y1 = 0.71653062105178833008;
+z1 = 1389.514892578125;
+
+nrkj2_1 = x1*x1 + y1*y1 + z1*z1;
+nrkj_1 = sqrt(nrkj2_1);
+
+/* Cas 2 */
+x2 = 943433600.;
+y2 = 5.7629808612905003154e-30;
+z2 = 1.9748078868190349535e-40;
+
+nrkj2_2 = x2*x2 + y2*y2 + z2*z2;
+nrkj_2 = sqrt(nrkj2_2);
+
+/* Cas 3 */
+x3 = 1056530038784.;
+y3 = 1067773132800.;
+z3 = 4.8185892015429297611e-37;
+
+nrkj2_3 = x3*x3 + y3*y3 + z3*z3;
+nrkj_3 = sqrt(nrkj2_3);

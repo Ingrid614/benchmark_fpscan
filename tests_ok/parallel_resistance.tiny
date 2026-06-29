@@ -1,0 +1,17 @@
+real r1;
+real r2;
+
+real ft1;
+real ft2;
+real ft3;
+real result;
+
+r1 = 0.001;
+r2 = 10000.;
+
+ft1 = 1. / r1;
+ft2 = 1. / r2;
+
+ft3 = ft1 + ft2;
+
+result = 1. / ft3;

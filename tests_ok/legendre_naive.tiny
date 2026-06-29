@@ -1,0 +1,79 @@
+/*
+ * Polynôme de Legendre P20
+ * Evaluation naïve.
+ *
+ * Les coefficients sont conservés sous forme de divisions
+ * afin de reproduire les opérations flottantes du benchmark
+ * d'origine.
+ */
+
+real x;
+
+real x2;
+real x4;
+real x6;
+real x8;
+real x10;
+real x12;
+real x14;
+real x16;
+real x18;
+real x20;
+
+real c0;
+real c2;
+real c4;
+real c6;
+real c8;
+real c10;
+real c12;
+real c14;
+real c16;
+real c18;
+real c20;
+
+real r;
+
+x = 0.999;
+
+/* puissances */
+
+x2 = x * x;
+x4 = x2 * x2;
+x6 = x4 * x2;
+x8 = x4 * x4;
+x10 = x8 * x2;
+x12 = x10 * x2;
+x14 = x12 * x2;
+x16 = x8 * x8;
+x18 = x16 * x2;
+x20 = x10 * x10;
+
+/* coefficients du polynôme */
+
+c20 = 34461632205. / 262144.;
+c18 = -83945001525. / 131072.;
+c16 = 347123925225. / 262144.;
+c14 = -49589132175. / 32768.;
+c12 = 136745788725. / 131072.;
+c10 = -29113619535. / 65536.;
+c8  = 15058768725. / 131072.;
+c6  = -557732175. / 32768.;
+c4  = 334639305. / 262144.;
+c2  = -4849845. / 131072.;
+c0  = 46189. / 262144.;
+
+/* évaluation naïve */
+
+r =
+    c20 * x20
+  + c18 * x18
+  + c16 * x16
+  + c14 * x14
+  + c12 * x12
+  + c10 * x10
+  + c8  * x8
+  + c6  * x6
+  + c4  * x4
+  + c2  * x2
+  + c0;

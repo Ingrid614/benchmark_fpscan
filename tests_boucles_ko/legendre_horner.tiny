@@ -1,0 +1,37 @@
+/*
+ * Evaluation du polynôme de Legendre P20
+ * par l'algorithme de Horner.
+ */
+
+real x;
+real result;
+real i;
+real coef;
+
+x = 0.999;
+
+result = 131.46081544876099;
+i = 19.;
+
+/* déroulement des coefficients */
+
+while (i >= 0.) {
+
+    if (i == 19.) {
+        coef = 0.;
+    } else {
+        if (i == 18.) {
+            coef = -640.449535369873;
+        } else {
+            if (i == 17.) {
+                coef = 0.;
+            } else {
+                coef = 0.;
+            }
+        }
+    }
+
+    result = result * x + coef;
+
+    i = i - 1.;
+}

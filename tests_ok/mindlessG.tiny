@@ -1,0 +1,16 @@
+real x;
+real z1;
+real z2;
+real t1;
+real t2;
+real q;
+
+x = 9000.;
+
+z1 = x * x + 1.;
+z2 = x - sqrt(z1);
+
+t1 = 0. - z2;
+t2 = 1. / (x + sqrt(z1));
+
+q = t1 - t2;

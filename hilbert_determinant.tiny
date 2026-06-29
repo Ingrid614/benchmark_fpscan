@@ -1,0 +1,77 @@
+/* Ce programme n'a pas détecté de cancellations comme espéré car la taille 3x3 est trop petite pour détecter des erreurs sérieuses */
+/* On pourrait l'utiliser pour des tailles plus grandes mais le langage ne gère pas les tableaux */
+real a11;
+real a12;
+real a13;
+real a21;
+real a22;
+real a23;
+real a31;
+real a32;
+real a33;
+
+real pivot1;
+real pivot2;
+real pivot3;
+
+real aux;
+real det;
+
+/* Construction de la matrice de Hilbert */
+
+a11 = 1. / (1. + 1. - 1.);
+a12 = 1. / (1. + 2. - 1.);
+a13 = 1. / (1. + 3. - 1.);
+
+a21 = 1. / (2. + 1. - 1.);
+a22 = 1. / (2. + 2. - 1.);
+a23 = 1. / (2. + 3. - 1.);
+
+a31 = 1. / (3. + 1. - 1.);
+a32 = 1. / (3. + 2. - 1.);
+a33 = 1. / (3. + 3. - 1.);
+
+det = 1.;
+
+pivot1 = a11;
+
+det = det * pivot1;
+
+/* normalisation de la ligne 1 */
+
+aux = 1. / pivot1;
+
+a12 = a12 * aux;
+a13 = a13 * aux;
+
+/* élimination ligne 2 */
+
+aux = a21;
+
+a22 = a22 - aux * a12;
+a23 = a23 - aux * a13;
+
+/* élimination ligne 3 */
+
+aux = a31;
+
+a32 = a32 - aux * a12;
+a33 = a33 - aux * a13;
+
+pivot2 = a22;
+
+det = det * pivot2;
+
+aux = 1. / pivot2;
+
+a23 = a23 * aux;
+
+/* élimination ligne 3 */
+
+aux = a32;
+
+a33 = a33 - aux * a23;
+
+pivot3 = a33;
+
+det = det * pivot3;

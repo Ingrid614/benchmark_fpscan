@@ -1,0 +1,25 @@
+/* 
+ * Benchmark d'itération numérique.
+ * La même expression est évaluée de façon répétée afin
+ * d'étudier la propagation des erreurs en virgule flottante.
+ * Selon les valeurs rencontrées, des phénomènes d'absorption
+ * ou de cancellation peuvent apparaître au fil des itérations.
+ */
+real b0;
+real b1;
+real b2;
+real b3;
+real t1;
+real t2;
+real t3;
+
+b0 = 2.3;
+
+t1 = (b0 * sqrt(b0)) / (b0 + 0.1);
+b1 = b0 + t1;
+
+t2 = (b1 * sqrt(b1)) / (b1 + 0.1);
+b2 = b1 + t2;
+
+t3 = (b2 * sqrt(b2)) / (b2 + 0.1);
+b3 = b2 + t3;

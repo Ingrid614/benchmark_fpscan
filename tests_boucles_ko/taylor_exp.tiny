@@ -1,0 +1,31 @@
+/*
+ * Approximation du nombre d'Euler e
+ * par la série :
+ *
+ * e = 1 + 1 + 1/2! + 1/3! + ...
+ */
+
+real e;
+real step;
+real denom;
+real term;
+real i;
+
+e = 2.;
+
+step = 2.;
+denom = 2.;
+
+i = 0.;
+
+while (i < 20.)
+{
+    term = 1. / denom;
+
+    e = e + term;
+
+    step = step + 1.;
+    denom = denom * step;
+
+    i = i + 1.;
+}

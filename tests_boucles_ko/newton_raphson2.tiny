@@ -1,0 +1,78 @@
+/*
+ * Méthode de Newton-Raphson.
+ *
+ * Recherche d'une racine du polynôme :
+ *
+ * f(x) = 3*x - x*x - x*x*x + 16
+ *
+ * La mise à jour est :
+ *
+ * x(n+1) = x(n) - f(x(n))/f'(x(n))
+ *
+ * avec :
+ *
+ * f'(x) = 3 - 2*x - 3*x*x
+ *
+ * L'algorithme s'arrête lorsque deux
+ * itérations successives deviennent
+ * suffisamment proches.
+ */
+
+real x;
+real oldX;
+
+real eps;
+real d;
+real diff;
+
+real iter;
+real maxStep;
+
+real fx;
+real dfx;
+
+x = 25.;
+
+eps = 0.00001;
+
+iter = 0.;
+maxStep = 100.;
+
+/* force l'entrée dans la boucle */
+d = eps + 1.;
+
+while (d > eps)
+{
+    oldX = x;
+
+    fx =
+        3. * x
+        - x * x
+        - x * x * x
+        + 16.;
+
+    dfx =
+        3.
+        - 2. * x
+        - 3. * x * x;
+
+    x = x - fx / dfx;
+
+    diff = oldX - x;
+
+    if (diff < 0.)
+    {
+        d = 0. - diff;
+    }
+    else
+    {
+        d = diff;
+    }
+
+    iter = iter + 1.;
+
+    if (iter >= maxStep)
+    {
+        d = 0.;
+    }
+}

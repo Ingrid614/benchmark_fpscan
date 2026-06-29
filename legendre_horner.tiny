@@ -1,0 +1,43 @@
+/*
+ * Polynôme de Legendre P20
+ * Evaluation par l'algorithme de Horner.
+ * Cette méthode est réputée perdre de la précision
+ * lorsque x est très proche de 1.
+ */
+
+real x;
+real r;
+
+x = 0.999;
+
+r = 131.46081544876099;
+r = r * x + 0.;
+
+r = r * x - 640.449535369873;
+r = r * x + 0.;
+
+r = r * x + 1324.1726883888245;
+r = r * x + 0.;
+
+r = r * x - 1513.5847215652466;
+r = r * x + 0.;
+
+r = r * x + 114.88968494415283;
+r = r * x + 0.;
+
+r = r * x - 444.23821311950684;
+r = r * x + 0.;
+
+r = r * x + 2.5524853134155273;
+r = r * x + 0.;
+
+r = r * x - 17.02014684677124;
+r = r * x + 0.;
+
+r = r * x + 0.1274021863937378;
+r = r * x + 0.;
+
+r = r * x - 0.03700191527605057;
+r = r * x + 0.;
+
+r = r * x + 0.17619705200195312;

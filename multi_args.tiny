@@ -1,0 +1,31 @@
+/*
+ * Test de l'expression :
+ *
+ * z = (x + y) - y
+ *
+ * sur deux jeux d'arguments.
+ * 
+ * Normalement on devrait obtenir une cancellation et absorption sur le deuxième cas(on en a détecté une avec FPCHECKER)
+ * Mais on ne détecte ni absorption ni cancellation
+ */
+
+real x;
+real y;
+real z;
+
+real i;
+
+/* premier cas */
+
+x = 1.2;
+y = 0.5;
+
+z = (x + y) - y;
+
+/* second cas
+* x = 1.e-15;
+* y = 1.e15;
+*/
+x = 0.000000000001;
+y = 1000000000000.;
+z = (x + y) - y;

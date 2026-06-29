@@ -1,0 +1,31 @@
+real theta;
+
+real P1;
+real P2;
+real P3;
+real TwoPi;
+
+real y;
+real r;
+
+theta = 7.e20;
+
+P1 = 4. * 7.85398125648498535156e-01;
+
+P2 = 4. * 3.77489470793079817668e-08;
+
+P3 = 4. * 2.69515142907905952645e-15;
+
+/* 2 * pi */
+TwoPi = 2. * (P1 + P2 + P3);
+
+/*
+ * floor n'existe pas dans Tiny.
+ * Comme theta/(2*pi) ≈ 1.1140846016432674e20
+ * on remplace directement y par la valeur calculée.
+ */
+
+y = 2. * 1.1140846016432674e20;
+
+/* reste de la réduction d'argument */
+r = ((theta - y * P1) - y * P2) - y * P3;

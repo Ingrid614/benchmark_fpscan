@@ -1,0 +1,53 @@
+real x;
+real y;
+real z;
+
+real di;
+real pow2;
+real rot_ang;
+
+real x_prime;
+real y_prime;
+real z_prime;
+
+real i;
+
+x = 0.60725293500888125617;
+y = 0.;
+z = 0.00000001;
+
+di = 0.;
+pow2 = 1.;
+
+i = 0.;
+
+while (i < 3.) {
+
+    if (z >= 0.) {
+        di = 1.;
+    } else {
+        di = -1.;
+    }
+
+    if (i == 0.) {
+        rot_ang = 0.7853981633974483;
+    } else {
+        if (i == 1.) {
+            rot_ang = 0.4636476090008061;
+        } else {
+            rot_ang = 0.24497866312686415;
+        }
+    }
+
+    x_prime = x - y * di * pow2;
+    y_prime = y + x * di * pow2;
+    z_prime = z - di * rot_ang;
+
+    pow2 = pow2 / 2.;
+
+    x = x_prime;
+    y = y_prime;
+    z = z_prime;
+
+    i = i + 1.;
+}
