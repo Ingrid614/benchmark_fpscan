@@ -1,3 +1,13 @@
+/*
+ * Approximation de l'intégrale de f(x) = x² sur [lrange, urange]
+ * à l'aide de la règle de Simpson.
+ *
+ * L'intervalle est découpé en n sous-intervalles de largeur
+ * step = (urange - lrange) / n.
+ *
+ * L'approximation est : (step / 3) * (f(x0) + 4f(x1) + 2f(x2) + ... + 4f(xn-1) + f(xn)).
+ */
+ 
 real lrange;
 real urange;
 real n;

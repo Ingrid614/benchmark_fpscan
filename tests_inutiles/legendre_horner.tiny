@@ -1,0 +1,40 @@
+/*
+ * Evaluation du polynôme de Legendre P20
+ * par l'algorithme de Horner.
+ *
+ * Le polynôme est évalué sous la forme imbriquée :
+ *
+ * P20(x) = (((((a20*x + a19)*x + a18)*x + ... )*x + a1)*x + a0)
+ *
+ * où les coefficients ai sont ceux du polynôme
+ * de Legendre d'ordre 20.
+ */
+
+real x;
+real result;
+
+x = 0.999;
+
+result = 0.;
+
+result = result * x + 34461632205. / 262144.;
+result = result * x + 0.;
+result = result * x - 83945001525. / 131072.;
+result = result * x + 0.;
+result = result * x + 347123925225. / 262144.;
+result = result * x + 0.;
+result = result * x - 49589132175. / 32768.;
+result = result * x + 0.;
+result = result * x + 136745788725. / 131072.;
+result = result * x + 0.;
+result = result * x - 29113619535. / 65536.;
+result = result * x + 0.;
+result = result * x + 15058768725. / 131072.;
+result = result * x + 0.;
+result = result * x - 557732175. / 32768.;
+result = result * x + 0.;
+result = result * x + 334639305. / 262144.;
+result = result * x + 0.;
+result = result * x - 4849845. / 131072.;
+result = result * x + 0.;
+result = result * x + 46189. / 262144.;

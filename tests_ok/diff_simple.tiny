@@ -2,5 +2,4 @@ real x;
 real y;
 
 x = 1.e16;
-
-y = (x + 1.) - x;
+y = (x+1.) - x;

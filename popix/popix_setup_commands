@@ -1,0 +1,7 @@
+## After installing antlr, glpk(libglpk-java) and fixmath, i ran these commands
+
+java -cp ~/Outils-stage/antlr/antlr-4.13.2-complete.jar org.antlr.v4.Tool -Dlanguage=Java *.g4
+
+javac -cp ~/Outils-stage/antlr/antlr-4.13.2-complete.jar:/usr/share/java/glpk-java-1.12.0.jar  *.java  src/Boolean/*.java src/Constraint/*.java src/Expression/*.java src/Number/*.java src/Statement/*.java src/Main.java src/Util/*.java
+
+java -cp ~/Outils-stage/antlr/antlr-4.13.2-complete.jar:/usr/share/java/glpk-java-1.12.0.jar:/home/ingridmoufe/Outils-stage/POPiX/src/:. Main

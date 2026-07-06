@@ -4,9 +4,10 @@
  * Ce programme compare deux formulations mathématiquement identiques.
  * La première peut provoquer une perte de précision à cause de la
  * soustraction de deux valeurs très proches.
+ * Avant : 2 Cancellations; 3 Absorptions
+ * Après : 0 Cancellations; 0 Absorptions
  */
 real x;
-real z1;
 real z2;
 real t1;
 real t2;
@@ -14,10 +15,20 @@ real q;
 
 x = 9000.;
 
-z1 = x * x + 1.;
-z2 = x - sqrt(z1);
 
-t1 = 0. - z2;
-t2 = 1. / (x + sqrt(z1));
+if (x <= -2.e158) {
+    z2 = x + x;
+}
+else {
+    if (x <= 2400000.) {
+        z2 = x - sqrt(x * x + 1.);
+    }
+    else {
+        z2 = (0. - 0.5) / x;
+    }
+}
+
+t1 = 0. - z2; // Valeur absolue
+t2 = 1. / (x + sqrt(x * x + 1.));
 
 q = t1 - t2;

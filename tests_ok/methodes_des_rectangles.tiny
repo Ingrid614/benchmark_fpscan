@@ -1,3 +1,13 @@
+/*
+ * Approximation de l'intégrale de sin(x) sur [a, b]
+ * à l'aide des sommes de Riemann inférieure et supérieure.
+ *
+ * La fonction est approchée par son développement limité :
+ * sin(x) ≈ x - x³/6 + x⁵/120.
+ *
+ * L'intervalle est découpé en n sous-intervalles de
+ * longueur = (b - a) / n.
+ */
 
 real a;
 real b;

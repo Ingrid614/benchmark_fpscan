@@ -1,0 +1,46 @@
+/*
+ * Evaluation du polynôme 5*x*x - 3
+ * pour des valeurs de x très proches de sa racine sqrt(3/5).
+ *
+ * Le résultat est très proche de zéro, ce qui peut provoquer
+ * des pertes de précision par cancellation.
+ */
+
+x1  = 0.7745966692414830; // FP64
+x2  = 0.7745966692414831; // FP64
+x3  = 0.7745966692414832; // FP64
+x4  = 0.7745966692414833; // FP64 
+x5  = 0.7745966692414834; // FP64
+x6  = 0.7745966692414835; // FP64
+x7  = 0.7745966692414836; // FP64
+x8  = 0.7745966692414837; // FP64
+x9  = 0.7745966692414838; // FP64
+x10 = 0.7745966692414840; // FP64
+x11 = 0.7745966692414841; // FP64
+x12 = 0.7745966692414842; // FP64
+
+y1  = 5.0 * x1  * x1  - 3.0; // FP32
+y2  = 5.0 * x2  * x2  - 3.0; // FP32
+y3  = 5.0 * x3  * x3  - 3.0; // FP32
+y4  = 5.0 * x4  * x4  - 3.0; // FP32
+y5  = 5.0 * x5  * x5  - 3.0; // FP32
+y6  = 5.0 * x6  * x6  - 3.0; // FP32
+y7  = 5.0 * x7  * x7  - 3.0; // FP32
+y8  = 5.0 * x8  * x8  - 3.0; // FP32
+y9  = 5.0 * x9  * x9  - 3.0; // FP32
+y10 = 5.0 * x10 * x10 - 3.0; // FP32
+y11 = 5.0 * x11 * x11 - 3.0; // FP32
+y12 = 5.0 * x12 * x12 - 3.0; // FP32
+
+require_nsb(y1,30);
+require_nsb(y2,30);
+require_nsb(y3,30);
+require_nsb(y4,30);
+require_nsb(y5,30);
+require_nsb(y6,30);
+require_nsb(y7,30);
+require_nsb(y8,30);
+require_nsb(y9,30);
+require_nsb(y10,30);
+require_nsb(y11,30);
+require_nsb(y12,30);

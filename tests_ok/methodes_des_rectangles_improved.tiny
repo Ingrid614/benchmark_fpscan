@@ -1,0 +1,51 @@
+/*
+ * Essai de réparation de l'Approximation de l'intégrale de sin(x) sur [a, b]
+ * à l'aide des sommes de Riemann inférieure et supérieure.
+ *
+ * La fonction est approchée par son développement limité n 0:
+ * sin(x) ≈ x - x³/6 + x⁵/120.
+ *
+ * L'intervalle est découpé en n sous-intervalles de
+ * longueur = (b - a) / n.
+ *
+ * Nous avons changé l'ordre de calcul des termes de f(xk) et f(xk+1)
+ * Avant : 0 Cancellations; 2 Absorptions (avec -unroll_n 3)
+ * Après : 0 Cancellations; 0 Absorptions
+ */
+
+real a;
+real b;
+real n;
+real longueur;
+real k;
+real aire_inf;
+real aire_sup;
+real x1;
+real x2;
+real s1;
+real s2;
+
+a = 0.;
+b = 6.283185307179586;
+n = 100.;
+
+longueur = (b - a) / n;
+
+aire_inf = 0.;
+aire_sup = 0.;
+
+k = 0.;
+
+while (k < n) {
+
+    x1 = a + k * longueur;
+    x2 = a + (k + 1.) * longueur;
+
+    s1 = (x1 * x1 * x1 * x1 * x1) / 120. - (x1 * x1 * x1) / 6. + x1;
+    s2 = (x2 * x2 * x2 * x2 * x2) / 120. - (x2 * x2 * x2) / 6. + x2;
+
+    aire_inf = aire_inf + longueur * s1;
+    aire_sup = aire_sup + longueur * s2;
+
+    k = k + 1.;
+}

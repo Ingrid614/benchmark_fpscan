@@ -1,0 +1,71 @@
+/*
+ * Amélioration du benchmark exact_ranges.tiny
+ *
+ * Réécriture du polynôme autour de sa racine :
+ *
+ *      5*x*x - 3 = 10*r*delta + 5*delta*delta
+ *
+ * où
+ *      r = sqrt(3/5)
+ *      delta = x - r
+ *
+ * Cette formulation évite la cancellation entre 5*x*x et 3.
+ * Avant : 12 Cancellations; 0 absorptions.
+ * Après : 12 Cancellations; 0 absorptions.
+ */
+
+real r;
+
+real x1;  real d1;  real y1;
+real x2;  real d2;  real y2;
+real x3;  real d3;  real y3;
+real x4;  real d4;  real y4;
+real x5;  real d5;  real y5;
+real x6;  real d6;  real y6;
+real x7;  real d7;  real y7;
+real x8;  real d8;  real y8;
+real x9;  real d9;  real y9;
+real x10; real d10; real y10;
+real x11; real d11; real y11;
+real x12; real d12; real y12;
+
+r = sqrt(3. / 5.);
+
+x1  = 0.7745966692414830;
+x2  = 0.7745966692414831;
+x3  = 0.7745966692414832;
+x4  = 0.7745966692414833;
+x5  = 0.7745966692414834;
+x6  = 0.7745966692414835;
+x7  = 0.7745966692414836;
+x8  = 0.7745966692414837;
+x9  = 0.7745966692414838;
+x10 = 0.7745966692414840;
+x11 = 0.7745966692414841;
+x12 = 0.7745966692414842;
+
+d1  = x1  - r;
+d2  = x2  - r;
+d3  = x3  - r;
+d4  = x4  - r;
+d5  = x5  - r;
+d6  = x6  - r;
+d7  = x7  - r;
+d8  = x8  - r;
+d9  = x9  - r;
+d10 = x10 - r;
+d11 = x11 - r;
+d12 = x12 - r;
+
+y1  = 10. * r * d1  + 5. * d1  * d1;
+y2  = 10. * r * d2  + 5. * d2  * d2;
+y3  = 10. * r * d3  + 5. * d3  * d3;
+y4  = 10. * r * d4  + 5. * d4  * d4;
+y5  = 10. * r * d5  + 5. * d5  * d5;
+y6  = 10. * r * d6  + 5. * d6  * d6;
+y7  = 10. * r * d7  + 5. * d7  * d7;
+y8  = 10. * r * d8  + 5. * d8  * d8;
+y9  = 10. * r * d9  + 5. * d9  * d9;
+y10 = 10. * r * d10 + 5. * d10 * d10;
+y11 = 10. * r * d11 + 5. * d11 * d11;
+y12 = 10. * r * d12 + 5. * d12 * d12;

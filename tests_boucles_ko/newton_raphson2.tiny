@@ -15,7 +15,7 @@
  *
  * L'algorithme s'arrête lorsque deux
  * itérations successives deviennent
- * suffisamment proches.
+ * suffisamment proches(donc lorsqu'il ya convergence).
  */
 
 real x;
@@ -33,7 +33,7 @@ real dfx;
 
 x = 25.;
 
-eps = 0.00001;
+eps = 0.001;
 
 iter = 0.;
 maxStep = 100.;
