@@ -1,0 +1,85 @@
+/*
+ * Benchmark d'absorption en arithmétique flottante.
+ *
+ * Issu d'EFTSanitizer.
+ *
+ * Les expressions étudiées sont :
+ *
+ * foo(x):
+ *
+ *     ((5*x) + 1) - (5*x)
+ *
+ * et bar(x,y):
+ *
+ *     ((5*x) + (1+y)) - ((5*x)+y)
+ *
+ * Mathématiquement, les deux résultats valent 1.
+ *
+ * Cependant, lorsque les valeurs intermédiaires
+ * deviennent grandes, le terme 1 peut être absorbé
+ * pendant les additions flottantes.
+ *
+ * Le résultat calculé peut alors différer du résultat exact.
+ */
+
+
+real x;
+real y;
+
+real z;
+real t;
+
+real a1;
+real a2;
+
+real b1;
+real b2;
+
+
+/* valeurs d'entrée */
+
+x = 1.;
+y = 10000000000000000.;
+
+
+/*
+ * foo(x)
+ *
+ * ((x*5)+1)-(x*5)
+ */
+
+a1 =
+    x * 5.;
+
+a2 =
+    a1 + 1.;
+
+z =
+    a2 - a1;
+
+
+/*
+ * bar(x,y)
+ *
+ * ((x*5)+(1+y))-((x*5)+y)
+ */
+
+
+b1 =
+    x * 5.;
+
+
+b2 =
+    b1
+    +
+    (1. + y);
+
+
+t =
+    b2
+    -
+    (
+        b1
+        +
+        y
+    );

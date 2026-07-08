@@ -1,0 +1,75 @@
+/*
+ * Résolution d'une équation quadratique :
+ *
+ * a*x*x + b*x + c = 0
+ *
+ * avec la formule :
+ *
+ * x = (-b +/- sqrt(b*b - 4*a*c))/(2*a)
+ *
+ * Ce benchmark étudie les cancellations
+ * dans le calcul des racines lorsque
+ * -b et sqrt(b*b - 4*a*c) sont proches.
+ */
+
+
+real fa;
+real fb;
+real fc;
+
+real fbb;
+real f4ac;
+
+real fresult;
+
+real fnumer1;
+real fnumer2;
+
+real froot1;
+real froot2;
+
+
+fa = 1.;
+fb = 100000.;
+fc = 1.;
+
+
+/* discriminant */
+
+
+
+fresult =
+    (fb * fb)
+    -
+    (4. * fa * fc);
+
+
+/* sqrt(b*b - 4*a*c) */
+
+
+/* numerateurs */
+
+fnumer1 =
+    -1. * fb
+    +
+    sqrt(fresult);
+
+
+fnumer2 =
+    -1. * fb
+    -
+    sqrt(fresult);
+
+
+/* racines */
+
+froot1 =
+    fnumer1
+    /
+    (2. * fa);
+
+
+froot2 =
+    fnumer2
+    /
+    (2. * fa);

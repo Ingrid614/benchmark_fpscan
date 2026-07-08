@@ -1,0 +1,37 @@
+/*
+ * Suite de Muller.
+ * 
+ * u(n) = 111 - 1130/u(n-1) + 3000/(u(n-2)*u(n-1))
+ *
+ * La limite théorique est 6, mais les erreurs d'arrondi
+ * peuvent progressivement faire dévier la suite.
+ */
+
+
+/* u1 = 11/2 */
+a = 5.5; // FP32
+
+
+/* u2 = 61/11 */
+b = 61.0 / 11.0; // FP32
+
+
+/* on commence au calcul de u3 */
+i = 3.0; // FP32
+
+
+while (i <= 25.0)
+{
+    c = b; // FP32
+
+    b = 111.0
+        - 1130.0 / b
+        + 3000.0 / (a * b); // FP32
+
+    a = c; // FP32
+
+    i = i + 1.0; // FP32
+};
+
+
+require_nsb(b,20);

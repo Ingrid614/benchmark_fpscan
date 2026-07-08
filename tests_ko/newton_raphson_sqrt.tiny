@@ -1,0 +1,102 @@
+/*
+ * Méthode de Newton-Raphson pour approximer une racine carrée.
+ *
+ * On cherche la racine de :
+ *
+ * f(x) = x*x - v
+ *
+ * avec :
+ *
+ * f'(x) = 2*x
+ *
+ * La mise à jour Newton est :
+ *
+ * x = x - (x*x - v)/(2*x)
+ *
+ * Ici le programme approxime sqrt(1771).
+ *
+ * Ce benchmark étudie les erreurs numériques
+ * produites par les soustractions et divisions
+ * pendant la convergence.
+ */
+
+
+real v;
+
+real x;
+real oldX;
+
+real eps;
+real d;
+
+real fx;
+real diffX;
+
+real iter;
+real maxStep;
+
+
+v = 1771.;
+
+x = 25.;
+
+eps = 0.00001;
+
+iter = 0.;
+maxStep = 100.;
+
+
+/* première itération */
+
+oldX = x;
+
+diffX = 2. * x;
+
+fx =
+    x * x
+    -
+    v;
+
+x =
+    x
+    -
+    fx / diffX;
+
+
+d = oldX - x;
+
+if (d < 0.)
+{
+    d = 0. - d;
+}
+
+
+/* boucle Newton */
+
+while (d > eps)
+{
+
+    oldX = x;
+
+
+    diffX = 2. * x;
+
+
+    fx = x * x - v;
+
+
+    x = x - fx / diffX;
+
+
+    iter = iter + 1.;
+
+
+    d = oldX - x;
+
+
+    if (d < 0.)
+    {
+        d = 0. - d;
+    }
+
+}

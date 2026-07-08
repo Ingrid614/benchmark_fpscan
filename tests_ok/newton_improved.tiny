@@ -10,6 +10,12 @@
  * avec :
  *
  * f'(x) = 4.41*x*x + 2.38*x - 1.83
+ *
+ * Une reécriture du numérateur et du dénominateur a été faite en mettant x en facteur dans l'expressions
+ * f(x) = (((x * 1.47 + 1.19) * x - 1.83) * x + 0.45)
+ * f'(x) = ((x * 4.41 + 2.38) * x - 1.83)
+ * Avant : 5 Cancellations; 1 Absorptions
+ * Après : 4 Cancellations; 1 Absorptions
  */
 
 real eps;
@@ -36,25 +42,9 @@ while (i < nmax)
         x
         -
         (
-            (
-                (
-                    1.47 * x * x * x
-                    +
-                    1.19 * x * x
-                )
-                -
-                1.83 * x
-                +
-                0.45
-            )
+            (((x * 1.47 + 1.19) * x - 1.83) * x + 0.45)
             /
-            (
-                4.41 * x * x
-                +
-                2.38 * x
-                -
-                1.83
-            )
+            ((x * 4.41 + 2.38) * x - 1.83)
         );
 
     i = i + 1.;

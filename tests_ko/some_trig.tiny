@@ -1,0 +1,49 @@
+/*
+ * Benchmark de cancellation avec fonctions trigonométriques.
+ *
+ * L'identité mathématique étudiée est :
+ *
+ *     tan(x) = sin(x) / cos(x)
+ *
+ * donc :
+ *
+ *     tan(x) - sin(x)/cos(x) = 0
+ */
+
+
+real x;
+real y;
+
+real a;
+real b;
+
+
+/*
+ * atan(1) = pi/4
+ *
+ * x = (pi/4) * 40002
+ */
+
+x =
+    atan(1.)
+    *
+    40002.;
+
+
+
+a =
+    tan(x);
+
+
+
+b =
+    sin(x)
+    /
+    cos(x);
+
+
+
+y =
+    a
+    -
+    b;

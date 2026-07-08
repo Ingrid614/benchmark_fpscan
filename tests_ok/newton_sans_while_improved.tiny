@@ -1,0 +1,76 @@
+/*
+ * Méthode de Newton-Raphson pour trouver une racine du polynôme :
+ *
+ * f(x) = 1.47*x*x*x + 1.19*x*x - 1.83*x + 0.45
+ *
+ * Mise à jour :
+ *
+ * x(n+1) = x(n) - f(x(n))/f'(x(n))
+ *
+ * avec :
+ *
+ * f'(x) = 4.41*x*x + 2.38*x - 1.83
+ *
+ * Le while original a été déroulé manuellement
+ * sur 4 itérations afin de faciliter l'analyse.
+ *
+ * Avant : 6 Cancellations; 2 Absorptions
+ * Après : 5 Cancellations; 1 Absorptions
+ */
+
+real eps;
+
+real x0;
+real x1;
+real x2;
+real x3;
+real x4;
+
+eps = 0.000000000001;
+
+/* Initialisation */
+x0 = 0.5 + 2. * eps;
+
+/* ---------------- Iteration 1 ---------------- */
+
+x1 =
+    x0
+    -
+    (
+        (((1.47 * x0 + 1.19) * x0 - 1.83) * x0 + 0.45)
+        /
+        ((x0 * 4.41 + 2.38) * x0 - 1.83)
+    );
+
+/* ---------------- Iteration 2 ---------------- */
+
+x2 =
+    x1
+    -
+    (
+        (((1.47 * x1 + 1.19) * x1 - 1.83) * x1 + 0.45)
+        /
+        ((x1 * 4.41 + 2.38) * x1 - 1.83)
+    );
+
+/* ---------------- Iteration 3 ---------------- */
+
+x3 =
+    x2
+    -
+    (
+        (((1.47 * x2 + 1.19) * x2 - 1.83) * x2 + 0.45)
+        /
+        ((x2 * 4.41 + 2.38) * x2 - 1.83)
+    );
+
+/* ---------------- Iteration 4 ---------------- */
+
+x4 =
+    x3
+    -
+    (
+        (((1.47 * x3 + 1.19) * x3 - 1.83) * x3 + 0.45)
+        /
+        ((x3 * 4.41 + 2.38) * x3 - 1.83)
+    );

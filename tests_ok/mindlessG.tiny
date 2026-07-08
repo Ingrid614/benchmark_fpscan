@@ -12,7 +12,7 @@ real t1;
 real t2;
 real q;
 
-x = 9000.;
+x = 3000000.;
 
 z1 = x * x + 1.;
 z2 = x - sqrt(z1);

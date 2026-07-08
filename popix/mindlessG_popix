@@ -5,19 +5,14 @@
  * La première peut provoquer une perte de précision à cause de la
  * soustraction de deux valeurs très proches.
  *
- * L'outil Odyssey nous a proposé la réécriture suivante avec une précision de 99.5% contre (64.4% initialement)
+ * L'outil Odyssey nous a proposé une réécriture suivante avec une précision de 99.5% contre (64.4% initialement)
  * (x <= -2e+158) ? (x + x) : ((x <= 2400000.0) ? (x - sqrt(fma(x, x, 1.0))) : (-0.5 / x))
  *
  * Avant : 2 Cancellations; 3 Absorptions
  * Après : 1 Cancellations; 1 Absorptions
  */
-real x;
-real z2;
-real t1;
-real t2;
-real q;
 
-x = 3000000.;
+x = 3000000.0;
 
 // La transformation commentée a été proposée par Herbie pour des valeurs très petites. La valeur 2e158 génère un Pinf avec fpscan 
 // Cette branche reste inutile pour ce benchmark
@@ -26,13 +21,14 @@ x = 3000000.;
 // }
 
 
-if (x <= 2400000.) {
-    z2 = x - sqrt(x * x + 1.);
-}
-else {
-    z2 = (0. - 0.5) / x;
-}
-t1 = 0. - z2; // Valeur absolue
-t2 = 1. / (x + sqrt(x * x + 1.));
+if (x <= 2400000.0) {
+    z2 = x - sqrt(x * x + 1.0);
+}else {
+    z2 = (0.0 - 0.5) / x;
+};
+t1 = 0.0 - z2; // Valeur absolue
+t2 = 1.0 / (x + sqrt(x * x + 1.0));
 
 q = t1 - t2;
+
+require_nsb(q,20);

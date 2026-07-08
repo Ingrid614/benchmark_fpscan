@@ -6,11 +6,17 @@
  *
  * La limite théorique est 6, mais les erreurs d'arrondi
  * peuvent progressivement faire dévier la suite.
+ *
+ * Avant : 2 Cancellations; 0 Absorptions (avec -unroll_n 3)
+ * Après : 2 Cancellations; 0 Absorptions
  */
+
 
 real un_1;
 real un_2;
 real un_3;
+real a;
+real b;
 
 real i;
 
@@ -29,7 +35,9 @@ while (i <= 25.)
     un_3 = un_2;
 
     /* calcul de u(n) */
-    un_2 = 111. - 1130. / un_2 + 3000. / (un_1 * un_2);
+    a = 111.;
+    b = 3000. / (un_1 * un_2) - 1130. / un_2;
+    un_2 = a + b;
 
     /* décalage des termes */
     un_1 = un_3;

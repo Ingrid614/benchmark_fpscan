@@ -1,3 +1,11 @@
+/*
+ * Polynôme de Legendre P20
+ * Evaluation naïve.
+ *
+ * Les coefficients sont conservés sous forme de divisions
+ * afin de reproduire les opérations flottantes du benchmark
+ * d'origine.
+ */
 x = 0.999; // FP64
 
 /* puissances */

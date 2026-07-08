@@ -1,0 +1,32 @@
+/*
+ * Exemple issu du papier OOPSLA 2013 "On-the-fly Detection
+ * of Instability Problems in Floating-Point Program Execution".
+ *
+ * Evaluation du polynôme :
+ *
+ * z = x*x*x*x - 4*x*x*x + 6*x*x - 4*x + 1
+ *
+ * qui correspond mathématiquement à :
+ *
+ * z = (x - 1)^4
+ *
+ * Le benchmark étudie les cancellations produites
+ * par l'évaluation de la forme développée du polynôme.
+ */
+
+
+real x;
+real z;
+
+
+x = 184.08964199999999777901393827051;
+
+z = x * x * x * x
+    -
+    4. * x * x * x
+    +
+    6. * x * x
+    -
+    4. * x
+    +
+    1.;

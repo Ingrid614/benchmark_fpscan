@@ -1,0 +1,97 @@
+/*
+ * Résolution d'une équation quadratique :
+ *
+ * a*x*x + b*x + c = 0
+ *
+ * avec la formule classique :
+ *
+ * x = (-b +/- sqrt(b*b - 4*a*c))/(2*a)
+ *
+ * Exemple inspiré de Kahan :
+ * "A Survey of Error Analysis".
+ *
+ * Ce benchmark étudie une cancellation
+ * dans le calcul du discriminant :
+ *
+ *     b*b - 4*a*c
+ *
+ * Les deux termes b*b et 4*a*c sont de
+ * grande amplitude et très proches.
+ *
+ * Leur soustraction produit un petit résultat
+ * et entraîne une perte de chiffres significatifs
+ * avant le calcul des racines.
+ */
+
+real fa;
+real fb;
+real fc;
+
+real fbb;
+real f4ac;
+
+real sub;
+real fsqt;
+
+real numer1;
+real numer2;
+
+real root1;
+real root2;
+
+
+/* coefficients */
+
+fa = 7169.;
+fb = -8686.;
+fc = 2631.;
+
+
+/* calcul du discriminant */
+
+fbb =
+    fb * fb;
+
+
+f4ac =
+    4. * fa * fc;
+
+
+sub =
+    fbb
+    -
+    f4ac;
+
+
+/* racine du discriminant */
+
+fsqt =
+    sqrt(sub);
+
+
+/* numérateurs */
+
+numer1 =
+    (-1. * fb)
+    +
+    fsqt;
+
+
+numer2 =
+    (-1. * fb)
+    -
+    fsqt;
+
+
+/* racines */
+
+root1 =
+    numer1
+    /
+    (2. * fa);
+
+
+root2 =
+    numer2
+    /
+    (2. * fa);
