@@ -1,3 +1,17 @@
+/*
+ * Calcul de la résistance équivalente
+ * de deux résistances en parallèle :
+ *
+ * R = 1 / (1/r1 + 1/r2)
+ *
+ * Ce benchmark étudie les erreurs d'arrondi
+ * lorsque les deux résistances ont des ordres
+ * de grandeur très différents.
+ *
+ * Lors de l'addition des inverses, le plus petit
+ * terme peut être absorbé par le plus grand,
+ * entraînant une perte de précision.
+ */
 real r1;
 real r2;
 

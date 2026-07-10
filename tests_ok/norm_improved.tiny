@@ -12,7 +12,7 @@
  * Cette transformation limite les overflows
  * et les pertes de précision.
  * Avant : 0 Cancellations, 2 Absorptions
- * Après : 0 Cancellations, 0 Absorptions
+ * Après : 0 Cancellations, 3 Absorptions
  */
 
 
@@ -105,23 +105,8 @@ ratio1 = min_y_maxxz / max_xyz;
 ratio2 = min_xz / max_xyz;
 
 
-correction =
-    (
-        ratio1 * min_y_maxxz
-        +
-        ratio2 * min_xz
-    )
-    /
-    max_xyz;
-
+correction = (ratio1 * min_y_maxxz + ratio2 * min_xz) / max_xyz;
 
 /* formule Herbie */
 
-norm =
-    max_xyz
-    *
-    (
-        1.
-        +
-        0.5 * correction
-    );
+norm = max_xyz * ( 1. + 0.5 * correction);

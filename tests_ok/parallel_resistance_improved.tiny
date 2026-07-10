@@ -1,0 +1,53 @@
+/*
+ * Calcul de la résistance équivalente
+ * de deux résistances en parallèle :
+ *
+ * R = 1 / (1/r1 + 1/r2)
+ *
+ * Ce benchmark étudie les erreurs d'arrondi
+ * lorsque les deux résistances ont des ordres
+ * de grandeur très différents.
+ *
+ * Lors de l'addition des inverses, le plus petit
+ * terme peut être absorbé par le plus grand,
+ * entraînant une perte de précision.
+ *
+ * L'outil Odyssey nous a proposé la réécriture suivante avec une précision de 83.4% contre (99.9% initialement)
+ * (fmin(r1, r2) <= -500000000.0) ? (fmax(r1, r2) / ((fmax(r1, r2) + fmin(r1, r2)) / fmin(r1, r2))) : (fmin(r1, r2) / ((fmin(r1, r2) / fmax(r1, r2)) - -1.0))
+ *
+ * Avant : 0 Cancellations; 1 Absorptions
+ * Après : 0 Cancellations; 3 Absorptions
+ */
+
+real r1;
+real r2;
+real min_r;
+real max_r;
+real result;
+
+r1 = 0.001;
+r2 = 10000.;
+
+/* fmin(r1,r2) et fmax(r1,r2) */
+
+if (r1 < r2)
+{
+    min_r = r1;
+    max_r = r2;
+}
+else
+{
+    min_r = r2;
+    max_r = r1;
+}
+
+
+if (min_r <= -500000000.)
+{
+    result = max_r / ((max_r + min_r) / min_r);
+}
+else
+{
+    result = min_r / ((min_r / max_r) + 1.);
+}
+

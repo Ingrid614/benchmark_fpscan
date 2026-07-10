@@ -1,0 +1,31 @@
+/*
+ * Exemple issu du papier OOPSLA 2013 "On-the-fly Detection
+ * of Instability Problems in Floating-Point Program Execution".
+ *
+ * Evaluation du polynôme :
+ *
+ * z = x*x*x*x - 4*x*x*x + 6*x*x - 4*x + 1
+ *
+ * qui correspond mathématiquement à :
+ *
+ * z = (x - 1)^4
+ *
+ * Le benchmark étudie les cancellations produites
+ * par l'évaluation de la forme développée du polynôme.
+ *
+ * L'outil Odyssey nous a proposé la réécriture suivante avec une précision de 83.4% contre (99.9% initialement)
+ * (fma(fma(x - 4.0, x, 6.0), x, -4.0) * x) - -1.0
+ *
+ * Avant : 0 Cancellations; 1 Absorptions
+ * Après : 0 Cancellations; 1 Absorptions
+ */
+
+
+real x;
+real z;
+
+
+x = 184.08964199999999777901393827051;
+
+z = ((((x - 4.) * x + 6.) * x - 4.) * x + 1.);
+

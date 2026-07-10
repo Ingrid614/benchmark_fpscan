@@ -49,49 +49,31 @@ fc = 2631.;
 
 /* calcul du discriminant */
 
-fbb =
-    fb * fb;
+fbb = fb * fb;
 
 
-f4ac =
-    4. * fa * fc;
+f4ac = 4. * fa * fc;
 
 
-sub =
-    fbb
-    -
-    f4ac;
+sub = fbb - f4ac;
 
 
 /* racine du discriminant */
 
-fsqt =
-    sqrt(sub);
+fsqt = sqrt(sub);
 
 
 /* numérateurs */
 
-numer1 =
-    (-1. * fb)
-    +
-    fsqt;
+numer1 = (-1. * fb) + fsqt;
 
 
-numer2 =
-    (-1. * fb)
-    -
-    fsqt;
+numer2 = (-1. * fb) - fsqt;
 
 
 /* racines */
 
-root1 =
-    numer1
-    /
-    (2. * fa);
+root1 = numer1 / (2. * fa);
 
 
-root2 =
-    numer2
-    /
-    (2. * fa);
+root2 = numer2 / (2. * fa);

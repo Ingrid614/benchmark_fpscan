@@ -38,10 +38,7 @@ fc = 1.;
 
 
 
-fresult =
-    (fb * fb)
-    -
-    (4. * fa * fc);
+fresult = (fb * fb) - (4. * fa * fc);
 
 
 /* sqrt(b*b - 4*a*c) */
@@ -49,27 +46,15 @@ fresult =
 
 /* numerateurs */
 
-fnumer1 =
-    -1. * fb
-    +
-    sqrt(fresult);
+fnumer1 = -1. * fb + sqrt(fresult);
 
 
-fnumer2 =
-    -1. * fb
-    -
-    sqrt(fresult);
+fnumer2 = -1. * fb - sqrt(fresult);
 
 
 /* racines */
 
-froot1 =
-    fnumer1
-    /
-    (2. * fa);
+froot1 = fnumer1 / (2. * fa);
 
 
-froot2 =
-    fnumer2
-    /
-    (2. * fa);
+froot2 = fnumer2 / (2. * fa);
