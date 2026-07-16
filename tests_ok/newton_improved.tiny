@@ -14,7 +14,7 @@
  * Une reécriture du numérateur et du dénominateur a été faite en mettant x en facteur dans l'expressions
  * f(x) = (((x * 1.47 + 1.19) * x - 1.83) * x + 0.45)
  * f'(x) = ((x * 4.41 + 2.38) * x - 1.83)
- * Avant : 5 Cancellations; 1 Absorptions
+ * Avant : 5 Cancellations; 1 Absorptions (unroll_n 3)
  * Après : 4 Cancellations; 1 Absorptions
  */
 

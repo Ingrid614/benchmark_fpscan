@@ -12,7 +12,7 @@
  * terme peut être absorbé par le plus grand,
  * entraînant une perte de précision.
  *
- * L'outil Odyssey nous a proposé la réécriture suivante avec une précision de 83.4% contre (99.9% initialement)
+ * L'outil Odyssey nous a proposé la réécriture suivante avec une précision de 99.9% contre (99.7% initialement)
  * (fmin(r1, r2) <= -500000000.0) ? (fmax(r1, r2) / ((fmax(r1, r2) + fmin(r1, r2)) / fmin(r1, r2))) : (fmin(r1, r2) / ((fmin(r1, r2) / fmax(r1, r2)) - -1.0))
  *
  * Avant : 0 Cancellations; 1 Absorptions
@@ -28,7 +28,8 @@ real result;
 r1 = 0.001;
 r2 = 10000.;
 
-/* fmin(r1,r2) et fmax(r1,r2) */
+
+/* fmin(x,y) et fmax(x,y) */
 
 if (r1 < r2)
 {
@@ -50,4 +51,3 @@ else
 {
     result = min_r / ((min_r / max_r) + 1.);
 }
-

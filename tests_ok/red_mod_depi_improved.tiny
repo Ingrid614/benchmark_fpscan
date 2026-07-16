@@ -1,12 +1,3 @@
-/*
- * Réduction d'argument pour les fonctions trigonométriques.
- *
- * Ce benchmark calcule le reste de la division
- * d'un angle très grand par 2π afin de le ramener
- * dans l'intervalle [-π, π], où les fonctions
- * trigonométriques sont évaluées avec une meilleure
- * précision.
- */
 real theta;
 
 real P1;
