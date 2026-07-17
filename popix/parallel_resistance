@@ -1,0 +1,26 @@
+/*
+ * Calcul de la résistance équivalente
+ * de deux résistances en parallèle :
+ *
+ * R = 1 / (1/r1 + 1/r2)
+ *
+ * Ce benchmark étudie les erreurs d'arrondi
+ * lorsque les deux résistances ont des ordres
+ * de grandeur très différents.
+ *
+ * Lors de l'addition des inverses, le plus petit
+ * terme peut être absorbé par le plus grand,
+ * entraînant une perte de précision.
+ */
+
+r1 = 0.001; // FP64
+r2 = 10000.0; // FP16
+
+ft1 = 1.0 / r1; // FP64
+ft2 = 1.0 / r2; // FP16
+
+ft3 = ft1 + ft2; // FP32
+
+result = 1.0 / ft3; // FP32
+
+require_nsb(result,20);

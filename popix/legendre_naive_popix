@@ -1,11 +1,16 @@
 /*
- * Polynôme de Legendre P20
+ * Essai de réparation du benchmark sur le Polynôme de Legendre P20
  * Evaluation naïve.
  *
  * Les coefficients sont conservés sous forme de divisions
  * afin de reproduire les opérations flottantes du benchmark
  * d'origine.
+ * L'outil Odyssey nous a proposé une réécriture avec 70.6% de précision dans l'intervalle [0,999 ; 1] et 53.6% sur R 
+ * Contre 66.9% dans l'intervalle [0,999 ; 1] et 52.6% sur R
+ * Avant : 4 Cancellations; 1 Absorptions
+ * Après : 3 Cancellations; 0 Absorptions
  */
+
 x = 0.999; // FP64
 
 /* puissances */

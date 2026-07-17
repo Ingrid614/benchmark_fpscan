@@ -1,3 +1,16 @@
+/*
+ * Réduction d'argument pour les fonctions trigonométriques.
+ *
+ * Ce benchmark calcule le reste de la division
+ * d'un angle très grand par 2π afin de le ramener
+ * dans l'intervalle [-π, π], où les fonctions
+ * trigonométriques sont évaluées avec une meilleure
+ * précision.
+ * Nous avons réécrit le calcul de result en mettant y en facteur
+ *
+ * Avant : 3 Cancellations, 5 Absorptions
+ * Après : 1 Cancellations, 4 Absorptions
+ */
 real theta;
 
 real P1;
@@ -28,4 +41,4 @@ TwoPi = 2. * (P1 + P2 + P3);
 y = 2. * 1.1140846016432674e20;
 
 /* reste de la réduction d'argument */
-r = ((theta - y * P1) - y * P2) - y * P3;
+r = theta - y * (P1 + P2 + P3);
