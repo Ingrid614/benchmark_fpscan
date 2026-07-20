@@ -17,9 +17,6 @@ real fa;
 real fb;
 real fc;
 
-real fbb;
-real f4ac;
-
 real fresult;
 
 real fnumer1;

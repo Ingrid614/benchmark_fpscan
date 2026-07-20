@@ -1,0 +1,73 @@
+/*
+ * Résolution d'une équation quadratique :
+ *
+ * a*x*x + b*x + c = 0
+ *
+ * avec la formule :
+ *
+ * x = (-b +/- sqrt(b*b - 4*a*c))/(2*a)
+ *
+ * Ce benchmark étudie les cancellations
+ * dans le calcul des racines lorsque
+ * -b et sqrt(b*b - 4*a*c) sont proches.
+ *
+ * Nous avons utilisé une réécriture de Odyssey qui a donné une expression avec une précision de 86.0% (initialement 45.8%).
+ * L'expression a plusieurs branches en fonction de la valeur de b. Nous avons utilisé l'expression qui correspond à la valeur de b dans le benchmark
+ * (b <= -4e+149) ? (-2.0 * b) : ((b <= -5e-83) ? (sqrt(fma(-4.0 * fmax(a, c), fmin(a, c), b * b)) - b) : ((b <= 9e-100) ? ((- b) + (fmax(a, c) * (sqrt(fmin(a, c) * -4.0) / sqrt(fmax(a, c))))) : (-2.0 * ((fmin(a, c) * fmax(a, c)) / b))))
+ *
+ * Avant : 1 Cancellations, 1 Absorptions
+ * Après : 0 Cancellations, 1 Absorptions
+ */
+
+real fa;
+real fb;
+real fc;
+
+real fresult;
+
+real fnumer1;
+real fnumer2;
+
+real froot1;
+real froot2;
+
+real min_ac;
+real max_ac;
+
+
+fa = 1.;
+fb = 100000.;
+fc = 1.;
+
+
+/* discriminant */
+
+fresult = (fb * fb) - (4. * fa * fc);
+
+
+if (fa < fc)
+{
+    min_ac = fa;
+    max_ac = fc;
+}
+else
+{
+    min_ac = fc;
+    max_ac = fa;
+}
+
+
+/* numerateurs */
+
+fnumer1 = -2. * ((min_ac * max_ac) / fb);
+
+
+fnumer2 = -1. * fb - sqrt(fresult);
+
+
+/* racines */
+
+froot1 = fnumer1 / (2. * fa);
+
+
+froot2 = fnumer2 / (2. * fa);
