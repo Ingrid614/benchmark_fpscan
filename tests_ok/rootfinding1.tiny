@@ -33,13 +33,7 @@ fc = 1.;
 
 /* discriminant */
 
-
-
 fresult = (fb * fb) - (4. * fa * fc);
-
-
-/* sqrt(b*b - 4*a*c) */
-
 
 /* numerateurs */
 

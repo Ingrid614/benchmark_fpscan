@@ -20,7 +20,11 @@
  * pendant les additions flottantes.
  *
  * Le résultat calculé peut alors différer du résultat exact.
+ *
+ * Avant : 1 Cancellations, 3 Absorptions
+ * Après : 0 Cancellations, 0 Absorptions
  */
+
 
 real x;
 real y;

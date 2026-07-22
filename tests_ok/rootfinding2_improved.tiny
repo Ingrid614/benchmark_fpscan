@@ -15,6 +15,11 @@
  *
  *     b*b - 4*a*c
  *
+ * La réécriture proposée par Herbie a une précision trop faible, elle n'a donc pas été utilisée
+ *
+ * Avant : 1 Cancellations, 0 Absorptions
+ * Après : 1 Cancellations, 0 Absorptions
+ *
  */
 
 real fa;
@@ -45,22 +50,17 @@ fc = 2631.;
 
 fbb = fb * fb;
 
-
 f4ac = 4. * fa * fc;
 
-
 sub = fbb - f4ac;
-
 
 /* racine du discriminant */
 
 fsqt = sqrt(sub);
 
-
 /* numérateurs */
 
 numer1 = (-1. * fb) + fsqt;
-
 
 numer2 = (-1. * fb) - fsqt;
 
@@ -68,6 +68,5 @@ numer2 = (-1. * fb) - fsqt;
 /* racines */
 
 root1 = numer1 / (2. * fa);
-
 
 root2 = numer2 / (2. * fa);

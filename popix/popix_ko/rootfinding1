@@ -18,55 +18,43 @@
  * -b-sqrt(b²-4ac) est remplacé par -2. * ((min_ac * max_ac) / fb)
  *
  * Avant : 1 Cancellations, 1 Absorptions
- * Après : 0 Cancellations, 0 Absorptions
+ * Après : 0 Cancellations, 1 Absorptions
  */
 
-real fa;
-real fb;
-real fc;
 
-real fresult;
-
-real fnumer1;
-real fnumer2;
-
-real froot1;
-real froot2;
-
-real min_ac;
-real max_ac;
-
-real inter;
-real prod;
-
-fa = 1.;
-fb = 100000.;
-fc = 1.;
+fa = 1.0;
+fb = 100000.0;
+fc = 1.0;
 
 if (fa < fc)
 {
     min_ac = fa;
     max_ac = fc;
-}
+};
 else
 {
     min_ac = fc;
     max_ac = fa;
-}
+};
 
-fresult =  (fb * fb) - (4. * fa * fc);
+/* discriminant */
+
+fresult = (fb * fb) - (4.0 * fa * fc);
 
 /* numerateurs */
 
-fnumer1 = -2. * ((min_ac * max_ac) / fb);
+fnumer1 = -2.0 * ((min_ac * max_ac) / fb);
 
 
-fnumer2 = -1. * fb - sqrt(fresult);
+fnumer2 = -1.0 * fb - sqrt(fresult);
 
 
 /* racines */
 
-froot1 = fnumer1 / (2. * fa);
+froot1 = fnumer1 / (2.0 * fa);
 
 
-froot2 = fnumer2 / (2. * fa);
+froot2 = fnumer2 / (2.0 * fa);
+
+require_nsb(froot1,20);
+require_nsb(froot2,20);

@@ -1,0 +1,38 @@
+/*
+ * Réduction d'argument pour les fonctions trigonométriques.
+ *
+ * Ce benchmark calcule le reste de la division
+ * d'un angle très grand par 2π afin de le ramener
+ * dans l'intervalle [-π, π], où les fonctions
+ * trigonométriques sont évaluées avec une meilleure
+ * précision.
+ * Nous avons réécrit le calcul de result en mettant y en facteur
+ *
+ * Avant : 3 Cancellations, 5 Absorptions
+ * Après : 1 Cancellations, 4 Absorptions
+ */
+
+theta = 700000000000000000000.0; // FP16
+
+P1 = 4.0 * 0.785398125648498535156; // FP64
+
+P2 = 4.0 * 0.0000000377489470793079817668; // FP16
+
+P3 = 4.0 * 0.00000000000000269515142907905952645; // FP16
+
+/* 2 * pi */
+TwoPi = 2.0 * (P1 + P2 + P3); // FP32
+
+/*
+ * floor n'existe pas dans Tiny.
+ * Comme theta/(2*pi) ≈ 1.1140846016432674e20
+ * on remplace directement y par la valeur calculée.
+ */
+
+y = 2.0 * 111408460164326740000.0; // FP16
+
+/* reste de la réduction d'argument */
+r = theta - y * (P1 + P2 + P3); // FP32
+
+require_nsb(r,24);
+require_nsb(TwoPi,24);

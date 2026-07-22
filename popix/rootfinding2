@@ -1,0 +1,58 @@
+/*
+ * Résolution d'une équation quadratique :
+ *
+ * a*x*x + b*x + c = 0
+ *
+ * avec la formule classique :
+ *
+ * x = (-b +/- sqrt(b*b - 4*a*c))/(2*a)
+ *
+ * Exemple inspiré de Kahan :
+ * "A Survey of Error Analysis".
+ *
+ * Ce benchmark étudie une cancellation
+ * dans le calcul du discriminant :
+ *
+ *     b*b - 4*a*c
+ *
+ * La réécriture proposée par Herbie a une précision trop faible, elle n'a donc pas été utilisée
+ *
+ * Avant : 1 Cancellations, 0 Absorptions
+ * Après : 1 Cancellations, 0 Absorptions
+ *
+ */
+
+/* coefficients */
+
+fa = 7169.0; // FP64
+fb = -8686.0; // FP64
+fc = 2631.0; // FP64
+
+
+/* calcul du discriminant */
+
+fbb = fb * fb; // FP64
+
+f4ac = 4.0 * fa * fc; // FP64
+
+sub = fbb - f4ac; // FP32
+
+/* racine du discriminant */
+
+fsqt = sqrt(sub); // FP16
+
+/* numérateurs */
+
+numer1 = (-1.0 * fb) + fsqt; // FP32
+
+numer2 = (-1.0 * fb) - fsqt; // FP32
+
+
+/* racines */
+
+root1 = numer1 / (2.0 * fa); // FP32
+
+root2 = numer2 / (2.0 * fa); // FP32
+
+require_nsb(root1,20);
+require_nsb(root2,20);
