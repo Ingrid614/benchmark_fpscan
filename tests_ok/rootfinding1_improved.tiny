@@ -43,6 +43,7 @@ fa = 1.;
 fb = 100000.;
 fc = 1.;
 
+
 if (fa < fc)
 {
     min_ac = fa;
@@ -53,7 +54,6 @@ else
     min_ac = fc;
     max_ac = fa;
 }
-
 fresult =  (fb * fb) - (4. * fa * fc);
 
 /* numerateurs */

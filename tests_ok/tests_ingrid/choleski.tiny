@@ -1,0 +1,128 @@
+/* Matrice A */
+
+float A00;
+float A01;
+float A02;
+float A03;
+
+float A10;
+float A11;
+float A12;
+float A13;
+
+float A20;
+float A21;
+float A22;
+float A23;
+
+float A30;
+float A31;
+float A32;
+float A33;
+
+/* Matrice L */
+
+float L00;
+float L01;
+float L02;
+float L03;
+
+float L10;
+float L11;
+float L12;
+float L13;
+
+float L20;
+float L21;
+float L22;
+float L23;
+
+float L30;
+float L31;
+float L32;
+float L33;
+
+/* Variables temporaires */
+
+float sum;
+float diag;
+
+/* Matrice A */
+
+A00 = 1.0;
+A01 = 1.0;
+A02 = 1.0;
+A03 = 1.0;
+
+A10 = 1.0;
+A11 = 5.0;
+A12 = 5.0;
+A13 = 5.0;
+
+A20 = 1.0;
+A21 = 5.0;
+A22 = 14.0;
+A23 = 14.0;
+
+A30 = 1.0;
+A31 = 5.0;
+A32 = 14.0;
+A33 = 15.0;
+
+/* Matrice L */
+
+L00 = 0.0;
+L01 = 0.0;
+L02 = 0.0;
+L03 = 0.0;
+
+L10 = 0.0;
+L11 = 0.0;
+L12 = 0.0;
+L13 = 0.0;
+
+L20 = 0.0;
+L21 = 0.0;
+L22 = 0.0;
+L23 = 0.0;
+
+L30 = 0.0;
+L31 = 0.0;
+L32 = 0.0;
+L33 = 0.0;
+
+/************* i = 0 *************/
+
+diag = A00;
+L00 = sqrt(diag);
+
+L10 = A10 / L00;
+L20 = A20 / L00;
+L30 = A30 / L00;
+
+/************* j = 1 *************/
+
+sum = L10 * L10;
+diag = A11 - sum;
+L11 = sqrt(diag);
+
+sum = L20 * L10;
+L21 = (A21 - sum) / L11;
+
+sum = L30 * L10;
+L31 = (A31 - sum) / L11;
+
+/************* j = 2 *************/
+
+sum = L20 * L20 + L21 * L21;
+diag = A22 - sum;
+L22 = sqrt(diag);
+
+sum = L30 * L20 + L31 * L21;
+L32 = (A32 - sum) / L22;
+
+/************* j = 3 *************/
+
+sum = L30 * L30 + L31 * L31 + L32 * L32;
+diag = A33 - sum;
+L33 = sqrt(diag);
