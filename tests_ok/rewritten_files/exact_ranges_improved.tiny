@@ -9,7 +9,6 @@
  *      r = sqrt(3/5)
  *      delta = x - r
  *
- * Cette formulation évite la cancellation entre 5*x*x et 3.
  * Avant : 12 Cancellations; 0 absorptions.
  * Après : 12 Cancellations; 0 absorptions.
  */

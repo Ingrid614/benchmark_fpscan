@@ -1,0 +1,63 @@
+/*
+ * Evaluation du polynôme 5*x*x - 3
+ * pour des valeurs de x très proches de sa racine sqrt(3/5).
+ *
+ * Ce benchmark étudie les erreurs d'arrondi
+ * lorsque le résultat est proche de zéro.
+ */
+double x1;  float y1;
+double x2;  float y2;
+double x3;  float y3;
+double x4;  float y4;
+double x5;  float y5;
+double x6;  float y6;
+double x7;  float y7;
+double x8;  float y8;
+double x9;  float y9;
+double x10; float y10;
+double x11; float y11;
+double x12; float y12;
+double inter1,inter2,inter3,inter4,inter5,inter6,inter7,inter8,inter9,inter10,inter11,inter12;
+double cinq;
+double trois;
+
+x1  = 0.7745966692414830;
+x2  = 0.7745966692414831;
+x3  = 0.7745966692414832;
+x4  = 0.7745966692414833;
+x5  = 0.7745966692414834;
+x6  = 0.7745966692414835;
+x7  = 0.7745966692414836;
+x8  = 0.7745966692414837;
+x9  = 0.7745966692414838;
+x10 = 0.7745966692414840;
+x11 = 0.7745966692414841;
+x12 = 0.7745966692414842;
+cinq = cast(double,5.);
+trois = cast(double,3.);
+
+
+inter1 = cinq * x1 * x1  - trois;
+y1  = cast(float,inter1);
+inter2 = cinq * x2 * x2  - trois;
+y2  = cast(float,inter2);
+inter3 = cinq * x3 * x3  - trois;
+y3  = cast(float,inter3);
+inter4 = cinq * x4 * x4  - trois;
+y4  = cast(float,inter4);
+inter5 = cinq * x5 * x5  - trois;
+y5  = cast(float,inter5);
+inter6 = cinq * x6 * x6  - trois;
+y6  = cast(float,inter6);
+inter7 = cinq * x7 * x7  - trois;
+y7  = cast(float,inter7);
+inter8 = cinq * x8 * x8  - trois;
+y8  = cast(float,inter8);
+inter9 = cinq * x9 * x9  - trois;
+y9  = cast(float,inter9);
+inter10 = cinq * x10 * x10  - trois;
+y10  = cast(float,inter10);
+inter11 = cinq * x11 * x11  - trois;
+y11  = cast(float,inter11);
+inter12 = cinq * x12 * x12  - trois;
+y12  = cast(float,inter12);
