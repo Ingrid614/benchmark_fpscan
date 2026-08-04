@@ -1,13 +1,11 @@
 /*
  * Calcul stable de la norme d'un vecteur 3D.
  *
- * Version issue d'une réécriture Herbie avec 99.3% de précision contre 45.2% initialement.
+ * Version issue d'une réécriture Herbie avec 99.2% de précision contre 44.6% initialement.
  *
  * Au lieu de calculer directement :
  *
  * sqrt(x1*x1 + y1*y1 + z1*z1)
- *
- * on normalise par la plus grande composante.
  *
  * Cette transformation limite les overflows
  * et les pertes de précision.

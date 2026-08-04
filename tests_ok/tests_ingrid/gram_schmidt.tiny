@@ -1,0 +1,38 @@
+float a11;
+float a12;
+float a13;
+
+float a21;
+float a22;
+float a23;
+
+float dot;
+float norm;
+
+float v21;
+float v22;
+float v23;
+
+a11 = 1.;
+a12 = 1.;
+a13 = 1.;
+
+a21 = 1.;
+a22 = 1.0000001;
+a23 = 1.;
+
+/* norme² */
+
+norm = a11*a11 + a12*a12 + a13*a13;
+
+/* produit scalaire */
+
+dot = a21*a11;
+dot = dot + a22*a12;
+dot = dot + a23*a13;
+
+/* projection */
+
+v21 = a21 - dot*a11/norm;
+v22 = a22 - dot*a12/norm;
+v23 = a23 - dot*a13/norm;

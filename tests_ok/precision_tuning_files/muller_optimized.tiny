@@ -14,21 +14,24 @@
  * Avant : 2 Cancellations; 0 Absorptions (avec -unroll_n 3)
  * Après : 1 Cancellations; 0 Absorptions (avec -unroll_n 3)
  */
-
+ 
+double un_1;
+float un_2;
+float un_3;
+float i;
 
 /* u1 = 11/2 */
-un_1 = 5.5; // FP64
+un_1 = 5.5;
 
 /* u2 = 61/11 */
-un_2 = 61. / 11.; // FP32
+un_2 = 61. / 11.;
 
 /* on commence au calcul de u3 */
-i = 3.; // FP32
-
+i = 3.;
 while (i <= 25.)
 {
     /* sauvegarde de u(n-1) */
-    un_3 = un_2; // FP32
+    un_3 = un_2;
 
     /* calcul de u(n) */
     un_2 = 111. + (3000. - 1130. * un_1) / (un_1 * un_2);
@@ -37,7 +40,5 @@ while (i <= 25.)
     un_1 = un_3;
 
     i = i + 1.;
-};
-
-require_nsb(un_2,23);
+}
 

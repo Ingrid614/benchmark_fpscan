@@ -1,0 +1,9 @@
+float x;
+float y;
+float un;
+
+un = 1.;
+x = 1.e16;
+y = (x+un) - x;
+
+// même comportement qu'avant la mixte précision

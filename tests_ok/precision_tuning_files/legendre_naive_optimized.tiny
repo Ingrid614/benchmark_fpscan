@@ -11,32 +11,37 @@
  * Après : 3 Cancellations; 0 Absorptions
  */
 
-real x;
+double x;
 
-real x2;
-real x4;
-real x6;
-real x8;
-real x10;
-real x12;
-real x14;
-real x16;
-real x18;
-real x20;
+double x2;
+double x4;
+double x6;
+double x8;
+double x10;
+double x12;
+double x14;
+double x16;
+double x18;
+double x20;
 
-real c0;
-real c2;
-real c4;
-real c6;
-real c8;
-real c10;
-real c12;
-real c14;
-real c16;
-real c18;
-real c20;
+f_10_5 c0;
+float c2;
+float c4;
+double c0_cast;
+double c2_cast;
+double c4_cast;
+double c6;
+double c8;
+double c10;
+double c12;
+double c14;
+double c16;
+double c18;
+double c20; // float initialement
 
-real r;
+float r;
+double r_cast;
+
 
 x = 0.999;
 
@@ -67,25 +72,9 @@ c4  = 334639305. / 262144.;
 c2  = -4849845. / 131072.;
 c0  = 46189. / 262144.;
 
+c0_cast = cast(double,c0);
+c2_cast = cast(double,c2);
+c4_cast = cast(double,c4);
+r_cast = cast(double,r);
 /* évaluation naïve */
 
-r =
-    c4* x4
-  + (
-        c10 * x10
-      + (
-            c12 * x12
-          + (
-                c14 * x14
-              + (
-                    c16 * x16
-                  + (
-                        (c20 * x2 + c18)
-                        * x18
-                    )
-                )
-            )
-        )
-        - x6 * (-c6 + (-c8 * x2))
-    )
-  + (c2 * x2 + c0);

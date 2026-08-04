@@ -1,0 +1,46 @@
+/*
+ * Suite de Muller.
+ * Ce benchmark étudie la convergence de la suite :
+ *
+ * u(n) = 111 - 1130/u(n-1) + 3000/(u(n-2)*u(n-1))
+ *
+ * La limite théorique est 6, mais les erreurs d'arrondi
+ * peuvent progressivement faire dévier la suite.
+ */
+
+float un_1;
+float un_2;
+float un_3;
+float coef1;
+float coef2;
+float coef3;
+
+float i;
+
+coef1 = 111.;
+coef2 = 1130.;
+coef3 = 3000.;
+/* u1 = 11/2 */
+un_1 = 5.5;
+
+/* u2 = 61/11 */
+un_2 = 61. / 11.;
+
+/* on commence au calcul de u3 */
+i = 3.;
+
+while (i <= 25.)
+{
+    /* sauvegarde de u(n-1) */
+    un_3 = un_2;
+
+    /* calcul de u(n) */
+    un_2 = coef1 - coef2 / un_2 + coef3 / (un_1 * un_2);
+
+    /* décalage des termes */
+    un_1 = un_3;
+
+    i = i + 1.;
+}
+
+

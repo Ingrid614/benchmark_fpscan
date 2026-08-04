@@ -1,7 +1,7 @@
 /*
  * Essai de correction des problèmes de cancellations et absorption du benchmark diff_root.tiny par réécriture
  * Avant : 3 Cancellations; 9 absorptions
- * Ce benchmark cherche évalue l'expression sqrt(x+1) - sqrt(x) pour des valeurs de x >> 1.
+ * Ce benchmark cherche évalue l'expression sqrt(x+1) - sqrt(x) pour des valeurs de x >> 1(precision 53.3%).
  * L'outil Odyssey nous a proposé l'expression suivante avec une précision de 99,4% : (x <= 1920000.0) ? (sqrt(x + 1.0) - sqrt(x)) : (sqrt(1.0 / x) * 0.5)
  * Après : 0 Cancellations; 3 absorptions
  */

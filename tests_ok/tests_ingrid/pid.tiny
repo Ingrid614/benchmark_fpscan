@@ -1,0 +1,63 @@
+/* Paramètres PID */
+
+float Kp;
+float Ki;
+float Kd;
+float dt;
+
+/* Variables */
+
+float integral;
+float previous_error;
+float error;
+float derivative;
+float output;
+float p;
+
+/* Variables de boucle */
+
+int i;
+int N;
+
+/* Initialisation */
+
+Kp = 100000000.0;
+Ki = 1000000.0;
+Kd = 10000.0;
+
+dt = 0.000001;
+
+integral = 0.0;
+previous_error = 0.0;
+
+N = 100000.;
+i = 0;
+
+/* Boucle PID */
+
+while (i < N) {
+
+    /* erreur oscillante amortie */
+
+    error = exp(-0.0002 * i) * sin(100.0 * i);
+
+    /* Terme proportionnel */
+
+    p = Kp * error;
+
+    /* Terme intégral */
+
+    integral = integral + Ki * error * dt;
+
+    /* Terme dérivé */
+
+    derivative = Kd * (error - previous_error) / dt;
+
+    /* Sortie */
+
+    output = p + integral + derivative;
+
+    previous_error = error;
+
+    i = i + 1;
+}
