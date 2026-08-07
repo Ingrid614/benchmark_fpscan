@@ -1,0 +1,32 @@
+/* Benchmark : Filtre de Kalman 1D */
+/* Problème : cancellation dans la mise à jour du gain */
+
+float x_estime, P;
+float z, R, Q, K;
+float N, i;
+
+N = 100000.0;
+i = 0.0;
+x_estime = 0.0;
+P = 1000000.0;          /* Grande incertitude initiale */
+Q = 0.0000000001;        /* Bruit de processus très petit */
+R = 0.0000000001;        /* Bruit de mesure très petit */
+
+while (i < N) {
+    /* Prédiction */
+    P = P + Q;
+
+    /* Mesure */
+    z = 1.0 + 10000000000.0 * sin(1000.0 * i);
+
+    /* Gain de Kalman */
+    K = P / (P + R);
+
+    /* Mise à jour */
+    x_estime = x_estime + K * (z - x_estime);
+
+    /* Mise à jour de la covariance */
+    P = (1.0 - K) * P;
+
+    i = i + 1.0;
+}

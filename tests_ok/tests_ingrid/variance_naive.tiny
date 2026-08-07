@@ -1,0 +1,26 @@
+/* Benchmark : Calcul de variance (formule instable) */
+/* Cancellation catastrophique */
+
+float n, somme, somme_carres;
+float moyenne, variance;
+float x1, x2, x3, x4, x5;
+
+/* 5 valeurs autour de 1e12 */
+x1 = 1000000000001.0;
+x2 = 1000000000002.0;
+x3 = 1000000000003.0;
+x4 = 1000000000004.0;
+x5 = 1000000000005.0;
+
+n = 5.0;
+
+/* Somme et somme des carrés */
+somme = x1 + x2 + x3 + x4 + x5;
+somme_carres = x1*x1 + x2*x2 + x3*x3 + x4*x4 + x5*x5;
+
+/* Moyenne */
+moyenne = somme / n;
+
+/* Formule naïve : E[X²] - E[X]² */
+variance = (somme_carres / n) - (moyenne * moyenne);
+/* Devrait être 2.0, mais perte catastrophique de précision */

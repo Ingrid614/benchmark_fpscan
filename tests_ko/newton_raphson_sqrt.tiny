@@ -21,19 +21,19 @@
  */
 
 
-real v;
+float v;
 
-real x;
-real oldX;
+float x;
+float oldX;
 
-real eps;
-real d;
+float eps;
+float d;
 
-real fx;
-real diffX;
+float fx;
+float diffX;
 
-real iter;
-real maxStep;
+float iter;
+float maxStep;
 
 
 v = 1771.;
@@ -94,7 +94,7 @@ while (d > eps)
     d = oldX - x;
 
 
-    if (d < 0.)
+    if (d < 0.0)
     {
         d = 0. - d;
     }

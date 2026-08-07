@@ -1,16 +1,16 @@
-real x;
-real y;
-real z;
+float x;
+float y;
+float z;
 
-real di;
-real pow2;
-real rot_ang;
+float di;
+float pow2;
+float rot_ang;
 
-real x_prime;
-real y_prime;
-real z_prime;
+float x_prime;
+float y_prime;
+float z_prime;
 
-real i;
+float i;
 
 x = 0.60725293500888125617;
 y = 0.;
@@ -32,7 +32,7 @@ while (i < 3.) {
     if (i < 1.) {
         rot_ang = 0.7853981633974483;
     } else {
-        if (i < 2.) {
+        if (i < 2.0) {
             rot_ang = 0.4636476090008061;
         } else {
             rot_ang = 0.24497866312686415;

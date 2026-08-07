@@ -1,0 +1,25 @@
+/* Benchmark : Intégration par trapèzes avec 4 points */
+/* Absorption et cancellation */
+
+float a, b, h;
+float f0, f1, f2, f3, f4;
+float integrale;
+float somme;
+
+a = 0.0;
+b = 100000000.0;
+h = (b - a) / 4.0;
+
+/* Intégrale de sin(x) de 0 à 1e8 */
+f0 = sin(a);
+f1 = sin(a + h);
+f2 = sin(a + 2.0*h);
+f3 = sin(a + 3.0*h);
+f4 = sin(b);
+
+/* Méthode des trapèzes */
+somme = f0 + f4 + 2.0 * (f1 + f2 + f3);
+integrale = (h / 2.0) * somme;
+
+/* ABSORPTION : h est énorme, les petites variations sont absorbées */
+/* CANCELLATION : les sin s'annulent */

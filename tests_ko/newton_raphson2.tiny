@@ -18,18 +18,18 @@
  * suffisamment proches(donc lorsqu'il ya convergence).
  */
 
-real x;
-real oldX;
+float x;
+float oldX;
 
-real eps;
-real d;
-real diff;
+float eps;
+float d;
+float diff;
 
-real iter;
-real maxStep;
+float iter;
+float maxStep;
 
-real fx;
-real dfx;
+float fx;
+float dfx;
 
 x = 25.;
 
@@ -45,16 +45,9 @@ while (d > eps)
 {
     oldX = x;
 
-    fx =
-        3. * x
-        - x * x
-        - x * x * x
-        + 16.;
+    fx = 3. * x - x * x - x * x * x + 16.;
 
-    dfx =
-        3.
-        - 2. * x
-        - 3. * x * x;
+    dfx = 3. - 2. * x - 3. * x * x;
 
     x = x - fx / dfx;
 

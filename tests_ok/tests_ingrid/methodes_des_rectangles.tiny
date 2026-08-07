@@ -9,17 +9,17 @@
  * longueur = (b - a) / n.
  */
 
-real a;
-real b;
-real n;
-real longueur;
-real k;
-real aire_inf;
-real aire_sup;
-real x1;
-real x2;
-real s1;
-real s2;
+float a;
+float b;
+float n;
+float longueur;
+float k;
+float aire_inf;
+float aire_sup;
+float x1;
+float x2;
+float s1;
+float s2;
 
 a = 0.;
 b = 6.283185307179586;

@@ -11,11 +11,11 @@
  */
 
 
-real x;
-real y;
+float x;
+float y;
 
-real a;
-real b;
+float a;
+float b;
 
 
 /*
@@ -24,26 +24,16 @@ real b;
  * x = (pi/4) * 40002
  */
 
-x =
-    atan(1.)
-    *
-    40002.;
+x = atan(1.) * 40002.;
 
 
 
-a =
-    tan(x);
+a = tan(x);
 
 
 
-b =
-    sin(x)
-    /
-    cos(x);
+b = sin(x) / cos(x);
 
 
 
-y =
-    a
-    -
-    b;
+y = a - b;
