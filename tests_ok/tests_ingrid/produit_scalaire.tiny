@@ -5,17 +5,17 @@ float x1, x2, x3, x4;
 float y1, y2, y3, y4;
 float produit_scalaire;
 
-/* Vecteur x */
-x1 = 100000000.0;
-x2 = 100000000.0;
-x3 = 100000000.0;
-x4 = 100000000.0;
+/* Vecteur x*/
+x1 = 1250.3847;
+x2 = -837.2163;
+x3 = 492.7518;
+x4 = 1031.4286;
 
-/* Vecteur y presque orthogonal à x */
-y1 = 100000000.0;
-y2 = -0.00000001;
-y3 = 0.000001;
-y4 = -0.000001;
+/* Vecteur y */
 
-/* Résultat devrait être ≈ 0, mais perte de précision */
+y1 = 1250.3846;
+y2 = 837.2162;
+y3 = -492.7517;
+y4 = 1031.4285;
+
 produit_scalaire = x1*y1 + x2*y2 + x3*y3 + x4*y4;

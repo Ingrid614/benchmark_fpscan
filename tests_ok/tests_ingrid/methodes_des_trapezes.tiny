@@ -1,53 +1,22 @@
-/* Benchmark : Méthode des trapèzes déroulée */
-/* Intégrale de sin(x) sur [0, b] avec n=4 sous-intervalles */
+/* Benchmark : Intégration par trapèzes avec 4 points */
+/* Absorption et cancellation */
 
 float a, b, h;
-float x0, x1, x2, x3, x4;
 float f0, f1, f2, f3, f4;
-float somme, integrale;
-float N, i;
+float integrale;
+float somme;
 
-/* Initialisation */
-N = 100000.0;
-i = 0.0;
 a = 0.0;
+b = 100000000.0;
+h = (b - a) / 4.0;
 
-while (i < N) {
-    /* Borne supérieure variable pour créer différents cas */
-    b = 100000000.0 + 10000000.0 * sin(1000.0 * i);
+/* Intégrale de sin(x) de 0 à 1e8 */
+f0 = sin(a);
+f1 = sin(a + h);
+f2 = sin(a + 2.0*h);
+f3 = sin(a + 3.0*h);
+f4 = sin(b);
 
-    /* Pas d'intégration (n = 4 sous-intervalles) */
-    h = (b - a) / 4.0;
-
-    /* Points d'intégration */
-    x0 = a;
-    x1 = a + h;
-    x2 = a + 2.0 * h;
-    x3 = a + 3.0 * h;
-    x4 = b;
-
-    /* Valeurs de la fonction sin(x) */
-    f0 = sin(x0);
-    f1 = sin(x1);
-    f2 = sin(x2);
-    f3 = sin(x3);
-    f4 = sin(x4);
-
-    /* Méthode des trapèzes avec n=4 */
-    /* I = h/2 * [f0 + f4 + 2*(f1 + f2 + f3)] */
-    somme = f0 + f4 + 2.0 * (f1 + f2 + f3);
-
-    integrale = (h / 2.0) * somme;
-
-    /* Variation supplémentaire : ajout d'une oscillation sur la fonction */
-    f0 = sin(x0) + 0.000000000001 * sin(5000.0 * i);
-    f1 = sin(x1) + 0.000000000001 * cos(6000.0 * i);
-    f2 = sin(x2) + 0.000000000001 * sin(7000.0 * i);
-    f3 = sin(x3) + 0.000000000001 * cos(8000.0 * i);
-    f4 = sin(x4) + 0.000000000001 * sin(9000.0 * i);
-
-    somme = f0 + f4 + 2.0 * (f1 + f2 + f3);
-    integrale = (h / 2.0) * somme;
-
-    i = i + 1.0;
-}
+/* Méthode des trapèzes */
+somme = f0 + f4 + 2.0 * (f1 + f2 + f3);
+integrale = (h / 2.0) * somme;

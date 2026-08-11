@@ -13,17 +13,17 @@
  */
 
 
-real fa;
-real fb;
-real fc;
+float fa;
+float fb;
+float fc;
 
-real fresult;
+float fresult;
 
-real fnumer1;
-real fnumer2;
+float fnumer1;
+float fnumer2;
 
-real froot1;
-real froot2;
+float froot1;
+float froot2;
 
 
 fa = 1.;

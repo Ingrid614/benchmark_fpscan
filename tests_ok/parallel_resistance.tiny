@@ -12,13 +12,13 @@
  * terme peut être absorbé par le plus grand,
  * entraînant une perte de précision.
  */
-real r1;
-real r2;
+float r1;
+float r2;
 
-real ft1;
-real ft2;
-real ft3;
-real result;
+float ft1;
+float ft2;
+float ft3;
+float result;
 
 r1 = 0.001;
 r2 = 10000.;

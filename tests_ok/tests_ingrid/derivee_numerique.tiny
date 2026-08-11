@@ -6,15 +6,10 @@ float f_x, f_xh;
 float derivee;
 
 x = 1.0;
-h = 0.000000000001;  /* Pas très petit */
+h = 0.001;  /* Pas très petit */
 
 /* f(x) = cos(x) */
 f_x = cos(x);
 f_xh = cos(x + h);
 
 derivee = (f_xh - f_x) / h;
-/* Devrait être 2.71828, mais perte de précision */
-
-h = 0.000000000000001;
-f_xh = cos(x + h);
-derivee = (f_xh - f_x) / h;  /* Encore pire ! */

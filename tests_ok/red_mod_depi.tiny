@@ -7,15 +7,15 @@
  * trigonométriques sont évaluées avec une meilleure
  * précision.
  */
-real theta;
+float theta;
 
-real P1;
-real P2;
-real P3;
-real TwoPi;
+float P1;
+float P2;
+float P3;
+float TwoPi;
 
-real y;
-real r;
+float y;
+float r;
 
 theta = 7.e20;
 

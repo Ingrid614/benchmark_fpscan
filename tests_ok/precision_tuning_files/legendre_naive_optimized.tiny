@@ -75,6 +75,25 @@ c0  = 46189. / 262144.;
 c0_cast = cast(double,c0);
 c2_cast = cast(double,c2);
 c4_cast = cast(double,c4);
-r_cast = cast(double,r);
 /* évaluation naïve */
 
+r_cast =
+    c4_cast * x4
+  + (
+        c10 * x10
+      + (
+            c12 * x12
+          + (
+                c14 * x14
+              + (
+                    c16 * x16
+                  + (
+                        (c20 * x2 + c18)
+                        * x18
+                    )
+                )
+            )
+        )
+        - x6 * (-c6 + (-c8 * x2))
+    )
+  + (c2_cast * x2 + c0_cast);

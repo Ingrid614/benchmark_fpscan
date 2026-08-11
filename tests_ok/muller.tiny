@@ -8,12 +8,18 @@
  * peuvent progressivement faire dévier la suite.
  */
 
-real un_1;
-real un_2;
-real un_3;
+float un_1;
+float un_2;
+float un_3;
+float coef1;
+float coef2;
+float coef3;
 
-real i;
+float i;
 
+coef1 = 111.;
+coef2 = 1130.;
+coef3 = 3000.;
 /* u1 = 11/2 */
 un_1 = 5.5;
 
@@ -29,7 +35,7 @@ while (i <= 25.)
     un_3 = un_2;
 
     /* calcul de u(n) */
-    un_2 = 111. - 1130. / un_2 + 3000. / (un_1 * un_2);
+    un_2 = coef1 - coef2 / un_2 + coef3 / (un_1 * un_2);
 
     /* décalage des termes */
     un_1 = un_3;

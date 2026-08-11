@@ -12,29 +12,45 @@
  * f'(x) = 4.41*x*x + 2.38*x - 1.83
  */
 
-real eps;
-real nmax;
+float eps;
+float nmax;
 
-real i;
+float i;
 
-real x;
-real y;
+float x;
+float y;
+float coef1;
+float coef2;
+float coef3;
+float coef4;
+float coef5;
+float coef6;
+float coef7;
+float deux;
 
+coef1 = 1.47;
+coef2 = 1.19;
+coef3 = 1.83;
+coef4 = 0.45;
+coef5 = 4.41;
+coef6 = 2.38;
+coef7 = 1.83;
+deux = 2.;
 eps = 0.000000000001;
 nmax = 3.;
 
 i = 1.;
 
 y = 0.5;
-x = y + 2. * eps;
+x = y + deux * eps;
 
 while (i < nmax)
 {
     x = y;
 
-    y = x - (((1.47 * x * x * x + 1.19 * x * x) - 1.83 * x + 0.45)
+    y = x - (((coef1 * x * x * x + coef2 * x * x) - coef3 * x + coef4)
             /
-            (4.41 * x * x + 2.38 * x - 1.83));
+            (coef5 * x * x + coef6 * x - coef7));
 
     i = i + 1.;
 }

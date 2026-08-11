@@ -33,10 +33,10 @@ float a33;
 
 eps = 0.000000000000001;
 big = 1000000.0;
+a11 = cast(float,rand_real(1.0,2.0));
 
 /* Matrice de Hilbert */
 
-a11 = big * 1.0;
 a12 = big * 0.5;
 a13 = big * 0.3333333333;
 

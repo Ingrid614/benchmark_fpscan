@@ -7,34 +7,36 @@
  * d'origine.
  */
 
-real x;
+float x;
 
-real x2;
-real x4;
-real x6;
-real x8;
-real x10;
-real x12;
-real x14;
-real x16;
-real x18;
-real x20;
+float x2;
+float x4;
+float x6;
+float x8;
+float x10;
+float x12;
+float x14;
+float x16;
+float x18;
+float x20;
 
-real c0;
-real c2;
-real c4;
-real c6;
-real c8;
-real c10;
-real c12;
-real c14;
-real c16;
-real c18;
-real c20;
+float c0;
+float c2;
+float c4;
+float c6;
+float c8;
+float c10;
+float c12;
+float c14;
+float c16;
+float c18;
+float c20;
 
-real r;
+float r;
+float val;
 
-x = 0.999;
+val = 0.999;
+x = val;
 
 /* puissances */
 

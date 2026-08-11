@@ -22,11 +22,11 @@
  * Le résultat calculé peut alors différer du résultat exact.
  */
 
-real x;
-real y;
+float x;
+float y;
 
-real z;
-real t;
+float z;
+float t;
 
 
 

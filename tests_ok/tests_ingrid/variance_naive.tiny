@@ -23,4 +23,3 @@ moyenne = somme / n;
 
 /* Formule naïve : E[X²] - E[X]² */
 variance = (somme_carres / n) - (moyenne * moyenne);
-/* Devrait être 2.0, mais perte catastrophique de précision */

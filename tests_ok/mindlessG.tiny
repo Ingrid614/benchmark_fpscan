@@ -5,12 +5,12 @@
  * La première peut provoquer une perte de précision à cause de la
  * soustraction de deux valeurs très proches.
  */
-real x;
-real z1;
-real z2;
-real t1;
-real t2;
-real q;
+float x;
+float z1;
+float z2;
+float t1;
+float t2;
+float q;
 
 x = 3000000.;
 

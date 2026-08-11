@@ -15,13 +15,13 @@
  * sur 4 itérations afin de faciliter l'analyse.
  */
 
-real eps;
+float eps;
 
-real x0;
-real x1;
-real x2;
-real x3;
-real x4;
+float x0;
+float x1;
+float x2;
+float x3;
+float x4;
 
 eps = 0.000000000001;
 
