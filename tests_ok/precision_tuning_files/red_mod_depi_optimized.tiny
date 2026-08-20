@@ -12,13 +12,18 @@
  * Après : 1 Cancellations, 4 Absorptions
  */
 f_10_5 theta;
+float theta_cast;
 
 double P1;
+float P1_cast;
 f_10_5 P2;
+float P2_cast;
 f_10_5 P3;
+float P3_cast;
 float TwoPi;
 
 f_10_5 y;
+float y_cast;
 float r;
 
 theta = 7.e20;
@@ -29,8 +34,13 @@ P2 = 4. * 3.77489470793079817668e-08;
 
 P3 = 4. * 2.69515142907905952645e-15;
 
+
+P1_cast = cast(float,P1);
+P2_cast = cast(float,P2);
+P3_cast = cast(float,P3);
+theta_cast = cast(float,theta);
 /* 2 * pi */
-TwoPi = 2. * (P1 + P2 + P3);
+TwoPi = 2. * (P1_cast + P2_cast + P3_cast);
 
 /*
  * floor n'existe pas dans Tiny.
@@ -39,6 +49,7 @@ TwoPi = 2. * (P1 + P2 + P3);
  */
 
 y = 2. * 1.1140846016432674e20;
+y_cast = cast(float,y);
 
 /* reste de la réduction d'argument */
-r = theta - y * (P1 + P2 + P3);
+r = theta_cast - y_cast * (P1_cast + P2_cast + P3_cast);

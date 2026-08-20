@@ -18,13 +18,13 @@
  * Après : 4 Cancellations; 1 Absorptions
  */
 
-real eps;
-real nmax;
+float eps;
+float nmax;
 
-real i;
+float i;
 
-real x;
-real y;
+float x;
+float y;
 
 eps = 0.000000000001;
 nmax = 3.;

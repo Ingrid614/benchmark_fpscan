@@ -26,11 +26,11 @@
  */
 
 
-real x;
-real y;
+float x;
+float y;
 
-real z;
-real t;
+float z;
+float t;
 
 
 

@@ -16,11 +16,11 @@
  */
 
 
-real un_1;
-real un_2;
-real un_3;
+float un_1;
+float un_2;
+float un_3;
 
-real i;
+float i;
 
 /* u1 = 11/2 */
 un_1 = 5.5;

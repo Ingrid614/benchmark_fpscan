@@ -42,7 +42,7 @@ nmax = 3.;
 i = 1.;
 
 y = 0.5;
-x = y + deux * eps;
+x = y + 2. * eps;
 
 while (i < nmax)
 {

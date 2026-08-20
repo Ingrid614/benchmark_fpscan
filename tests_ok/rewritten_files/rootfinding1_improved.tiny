@@ -21,28 +21,29 @@
  * Après : 0 Cancellations, 0 Absorptions
  */
 
-real fa;
-real fb;
-real fc;
+float fa;
+float fb;
+float fc;
 
-real fresult;
+float fresult;
 
-real fnumer1;
-real fnumer2;
+float fnumer1;
+float fnumer2;
 
-real froot1;
-real froot2;
+float froot1;
+float froot2;
 
-real min_ac;
-real max_ac;
+float min_ac;
+float max_ac;
 
-real inter;
-real prod;
+float inter;
+float prod;
 
 fa = 1.;
 fb = 100000.;
 fc = 1.;
 
+fresult =  (fb * fb) - (4. * fa * fc);
 
 if (fa < fc)
 {
@@ -54,7 +55,7 @@ else
     min_ac = fc;
     max_ac = fa;
 }
-fresult =  (fb * fb) - (4. * fa * fc);
+
 
 /* numerateurs */
 

@@ -11,11 +11,11 @@
  * Avant : 2 Cancellations; 3 Absorptions
  * Après : 1 Cancellations; 1 Absorptions
  */
-real x;
-real z2;
-real t1;
-real t2;
-real q;
+float x;
+float z2;
+float t1;
+float t2;
+float q;
 
 x = 3000000.;
 

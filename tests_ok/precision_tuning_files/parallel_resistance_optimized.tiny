@@ -13,19 +13,25 @@
  * entraînant une perte de précision.
  */
 double r1;
+float r1_cast;
 f_10_5 r2;
+float r2_cast;
 
 double ft1;
+float ft1_cast;
 f_10_5 ft2;
+float ft2_cast;
 float ft3;
 float result;
 
 r1 = 0.001;
 r2 = 10000.;
+r1_cast = cast(float,r1);
+r2_cast = cast(float,r2);
 
-ft1 = 1. / r1;
-ft2 = 1. / r2;
+ft1_cast = 1. / r1_cast;
+ft2_cast = 1. / r2_cast;
 
-ft3 = ft1 + ft2;
+ft3 = ft1_cast + ft2_cast;
 
 result = 1. / ft3;

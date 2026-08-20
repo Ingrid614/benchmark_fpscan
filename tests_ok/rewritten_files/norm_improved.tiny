@@ -14,26 +14,26 @@
  */
 
 
-real x1;
-real y1;
-real z1;
+float x1;
+float y1;
+float z1;
 
-real abs_x;
-real abs_y;
-real abs_z;
+float abs_x;
+float abs_y;
+float abs_z;
 
-real max_xy;
-real max_xyz;
+float max_xy;
+float max_xyz;
 
-real min_xz;
-real min_y_maxxz;
+float min_xz;
+float min_y_maxxz;
 
-real ratio1;
-real ratio2;
+float ratio1;
+float ratio2;
 
-real correction;
+float correction;
 
-real norm;
+float norm;
 
 x1 = 268453443323035648.;
 y1 = 0.71653062105178833008;

@@ -19,11 +19,11 @@
  * Après : 0 Cancellations; 3 Absorptions
  */
 
-real r1;
-real r2;
-real min_r;
-real max_r;
-real result;
+float r1;
+float r2;
+float min_r;
+float max_r;
+float result;
 
 r1 = 0.001;
 r2 = 10000.;

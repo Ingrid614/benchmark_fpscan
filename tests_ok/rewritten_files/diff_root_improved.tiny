@@ -5,16 +5,16 @@
  * L'outil Odyssey nous a proposé l'expression suivante avec une précision de 99,4% : (x <= 1920000.0) ? (sqrt(x + 1.0) - sqrt(x)) : (sqrt(1.0 / x) * 0.5)
  * Après : 0 Cancellations; 3 absorptions
  */
-real x1;
-real x2;
-real x3;
-real x4;
-real x5;
-real y1;
-real y2;
-real y3;
-real y4;
-real y5;
+float x1;
+float x2;
+float x3;
+float x4;
+float x5;
+float y1;
+float y2;
+float y3;
+float y4;
+float y5;
 
 x1 = 10000000000000000.;
 x2 = 106687256697924407457000.;

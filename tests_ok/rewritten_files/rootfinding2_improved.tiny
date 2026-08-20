@@ -22,21 +22,21 @@
  *
  */
 
-real fa;
-real fb;
-real fc;
+float fa;
+float fb;
+float fc;
 
-real fbb;
-real f4ac;
+float fbb;
+float f4ac;
 
-real sub;
-real fsqt;
+float sub;
+float fsqt;
 
-real numer1;
-real numer2;
+float numer1;
+float numer2;
 
-real root1;
-real root2;
+float root1;
+float root2;
 
 
 /* coefficients */

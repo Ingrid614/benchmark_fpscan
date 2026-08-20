@@ -22,10 +22,12 @@
 
 
 double x;
+double z_cast;
 float z;
 
 
 x = 184.08964199999999777901393827051;
+// z_cast = cast(double,z);
 
-z = (((x - 4.) * x + 6.) * x - 4.) * x + 1.;
+z_cast = (((x - 4.) * x + 6.) * x - 4.) * x + 1.;
 

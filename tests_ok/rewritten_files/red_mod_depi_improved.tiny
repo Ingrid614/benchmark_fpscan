@@ -11,15 +11,15 @@
  * Avant : 3 Cancellations, 5 Absorptions
  * Après : 1 Cancellations, 4 Absorptions
  */
-real theta;
+float theta;
 
-real P1;
-real P2;
-real P3;
-real TwoPi;
+float P1;
+float P2;
+float P3;
+float TwoPi;
 
-real y;
-real r;
+float y;
+float r;
 
 theta = 7.e20;
 
