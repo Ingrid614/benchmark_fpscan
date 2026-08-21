@@ -16,6 +16,7 @@
  */
  
 double un_1;
+float un_1_cast;
 float un_2;
 float un_3;
 float i;
@@ -24,20 +25,21 @@ float i;
 un_1 = 5.5;
 
 /* u2 = 61/11 */
-un_2 = 61. / 11.;
+un_2 = 61.0 / 11.0;
 
 /* on commence au calcul de u3 */
-i = 3.;
+i = 3.0;
 while (i <= 25.)
 {
     /* sauvegarde de u(n-1) */
     un_3 = un_2;
 
     /* calcul de u(n) */
-    un_2 = 111. + (3000. - 1130. * un_1) / (un_1 * un_2);
+    un_1_cast = cast(float,un_1);
+    un_2 = 111.0 + (3000.0 - 1130.0 * un_1) / (un_1_cast * un_2);
 
     /* décalage des termes */
-    un_1 = un_3;
+    un_1_cast = un_3;
 
     i = i + 1.;
 }

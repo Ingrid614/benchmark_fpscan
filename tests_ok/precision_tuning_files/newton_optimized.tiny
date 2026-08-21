@@ -19,7 +19,9 @@
  */
 
 float eps;
+double eps_cast;
 float nmax;
+double nmax_cast;
 
 double i;
 
@@ -32,9 +34,11 @@ nmax = 3.;
 i = 1.;
 
 y = 0.5;
-x = y + 2. * eps;
+eps_cast = cast(double,eps);
+x = y + 2. * eps_cast;
 
-while (i < nmax)
+nmax_cast = cast(double,nmax);
+while (i < nmax_cast)
 {
     x = y;
 

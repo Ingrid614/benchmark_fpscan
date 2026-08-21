@@ -7,7 +7,7 @@ float N, i, denominateur;
 
 N = 100000.0;
 i = 0.0;
-x0 = 1000000.0;
+x0 = 1000.0;
 x1 = 1000000.01;
 
 while (i < N) {

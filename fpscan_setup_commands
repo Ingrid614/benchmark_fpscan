@@ -1,0 +1,17 @@
+## Commandes pour générer l'exécutable  :
+autoconf
+./configure
+dune build
+
+## Il faut au préalable installer les dépendances nécessaires suivantes :
+opam install --yes menhir
+opam install --yes ppx_inline_test # check if really needed
+opam install --yes z3
+opam install --yes apron
+opam install --yes lwt
+opam install --yes yaml
+
+
+L'éxécutable est : ./_build/default/bin/main_fpscan.exe
+
+Pour lancer une analyse, il faut lancer : ./_build/default/bin/main_fpscan.exe fichier.tiny
